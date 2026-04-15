@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>спостережні докази — мікроквазари та блазари</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- === PREPRINT HEADER (arXiv Strip) === -->
+<div class="preprint-header">
+  <span class="left">astro-ph.HE // draft version april 2026</span>
+  <span class="right">precession of relativistic jets: observational evidence</span>
+</div>
+
+<!-- === TITLE SECTION === -->
+<h1>математична модель кінематики та спостережні докази: від мікроквазарів до блазарів</h1>
+
+<!-- === ABSTRACT === -->
+<div class="abstract">
+  <p><strong>abstract</strong> представлено математичний апарат доплерівського підсилення для опису варіативності прецесуючих струменів. наведено вичерпний огляд спостережних даних для ключових об'єктів: мікроквазарів ss 433 та v404 cygni (галактичні масштаби), а також надмасивних систем — блазара oj 287, радіогалактик 3c 84, 3c 273 та s-подібних джетів pks 2300-18. демонструється масштабна інваріантність фізичних процесів акреції та прецесії.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: МАТЕМАТИЧНА МОДЕЛЬ КІНЕМАТИКИ -->
+<!-- ============================================================ -->
+
+<h2>математична модель кінематики та природа варіативності</h2>
+
+<p>одним із найбільш значущих наслідків вивчення прецесії релятивістських струменів є зміна фундаментальної парадигми у розумінні природи варіативності (флуктуацій блиску) активних ядер галактик та квазарів. впродовж десятиліть в астрофізиці панувала думка, що раптові спалахи блазарів мають суто стохастичну (випадкову) природу і пов'язані переважно з раптовими нестабільностями темпу акреції в диску або з внутрішніми ударними хвилями у самому струмені (відома shock-in-jet model), де області плазми, викинуті з різними швидкостями, зіштовхуються між собою, генеруючи сплески випромінювання <span class="citation" data-ref="ref_s169">[s_s169, s_s336]</span>.</p>
+
+<p>проте скрупульозний кінематичний аналіз прецесуючих струменів доводить, що левова частка багатохвильової варіативності — від радіодіапазону до гамма-променів високої енергії — має строго детермінований, геометричний характер <span class="citation" data-ref="ref_s23">[s_s23, s_s115, s_s134]</span>. фізична основа цього явища полягає в ефектах спеціальної теорії відносності. виміряна на землі густина потоку випромінювання <span class="math">S_ν</span> для релятивістського струменя масштабується пропорційно доплерівському фактору <span class="math">δ</span> у макроскопічному степені <span class="math">p + α</span>, де <span class="math">α</span> — спектральний індекс випромінювання, а параметр <span class="math">p</span> залежить від геометричної структури викиду (зазвичай <span class="math">p = 2</span> для безперервного струменя або <span class="math">p = 3</span> для дискретних, ізольованих плазмоїдів) <span class="citation" data-ref="ref_b8">[s_b8]</span>.</p>
+
+<!-- === EQUATION: Doppler Factor === -->
+<div class="equation">
+  δ = [γ (1 − β cos θ)]⁻¹
+  <span class="equation-number">(2)</span>
+</div>
+
+<p>сам доплерівський фактор (або фактор лоренца-доплера) розраховується за формулою, де <span class="math">γ = 1/√(1 − β²)</span> — лоренц-фактор плазми, <span class="math">β = v/c</span> — швидкість плазми у частках швидкості світла, а <span class="math">θ</span> — кут зору між вектором швидкості плазми та променем зору спостерігача. через невпинну прецесію кут <span class="math">θ</span> постійно і періодично змінюється. коли прецесійний конус повертає струмінь так, що він дивиться майже прямовисно на спостерігача (кут <span class="math">θ → 0</span>), значення <span class="math">δ</span> стрімко і нелінійно зростає. наприклад, в об'єкті oj 287 значення доплерівського фактора еволюціонує від мінімального 1.3 до феноменального 17.5 <span class="citation" data-ref="ref_b2">[s_b2]</span>. зважаючи на ступеневу залежність потоку, це призводить до колосального посилення видимої яскравості (у тисячі разів) без жодних реальних фізичних змін у потужності самої центральної машини чорної діри <span class="citation" data-ref="ref_s8">[s_s8, s_s24, s_b8]</span>.</p>
+
+<!-- === FIGURE 1: Doppler Boosting Geometry === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 350" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">геометрія доплерівського підсилення прецесуючого струменя</text>
+    
+    <!-- Observer (left side) -->
+    <text x="40" y="180" font-size="10" fill="var(--ink)" font-weight="bold">спостерігач</text>
+    <text x="40" y="195" font-size="8" fill="var(--ink-light)">(земля)</text>
+    <circle cx="55" cy="175" r="8" fill="none" stroke="var(--ink)" stroke-width="1.5" />
+    <circle cx="55" cy="175" r="3" fill="var(--ink)" />
+    
+    <!-- Line of sight -->
+    <line x1="63" y1="175" x2="500" y2="175" stroke="var(--ink-light)" stroke-width="0.8" stroke-dasharray="6,3" />
+    <text x="280" y="168" font-size="8" fill="var(--ink-light)" font-style="italic">промінь зору</text>
+    
+    <!-- Central engine -->
+    <circle cx="300" cy="230" r="25" fill="var(--ink)" opacity="0.9" />
+    <circle cx="300" cy="230" r="25" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+    <text x="300" y="235" font-size="9" fill="var(--paper)" text-anchor="middle" font-weight="bold">чд</text>
+    
+    <!-- Accretion disk -->
+    <ellipse cx="300" cy="230" rx="60" ry="12" fill="none" stroke="var(--ink)" stroke-width="1.2" transform="rotate(-10, 300, 230)" />
+    
+    <!-- Precession cone -->
+    <path d="M 300 205 L 200 120" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="4,3" />
+    <path d="M 300 205 L 400 120" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="4,3" />
+    <ellipse cx="300" cy="120" rx="100" ry="20" fill="none" stroke="var(--rule)" stroke-width="0.6" stroke-dasharray="3,4" />
+    
+    <!-- Jet axis (current) -->
+    <line x1="300" y1="205" x2="240" y2="80" stroke="var(--accent)" stroke-width="2.5" />
+    <polygon points="235,85 228,72 242,77" fill="var(--accent)" />
+    <text x="215" y="70" font-size="9" fill="var(--accent)" font-style="italic">струмінь</text>
+    
+    <!-- Angle θ annotation -->
+    <path d="M 280 175 Q 290 185 300 200" stroke="var(--ink)" stroke-width="0.8" fill="none" />
+    <text x="272" y="178" font-size="10" fill="var(--ink)" font-weight="bold">θ</text>
+    <text x="255" y="192" font-size="8" fill="var(--ink)" font-style="italic">кут зору</text>
+    
+    <!-- Doppler boost curve (inset) -->
+    <rect x="420" y="60" width="160" height="120" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.8" />
+    <text x="500" y="78" font-size="8" fill="var(--ink)" text-anchor="middle" font-weight="bold">δ(θ)</text>
+    
+    <!-- Mini plot -->
+    <line x1="440" y1="160" x2="560" y2="160" stroke="var(--ink)" stroke-width="0.6" />
+    <line x1="440" y1="80" x2="440" y2="160" stroke="var(--ink)" stroke-width="0.6" />
+    
+    <path d="M 440 155 Q 470 150 490 120 Q 500 95 500 90 Q 510 95 520 120 Q 540 150 560 155" 
+          stroke="var(--accent)" stroke-width="1.5" fill="none" />
+    
+    <text x="450" y="172" font-size="7" fill="var(--ink-light)">θ = 0°</text>
+    <text x="520" y="172" font-size="7" fill="var(--ink-light)">θ → 90°</text>
+    <text x="460" y="95" font-size="7" fill="var(--accent)">макс. підсилення</text>
+    
+    <!-- Flux equation -->
+    <rect x="60" y="270" width="480" height="55" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="300" y="290" font-size="9" fill="var(--ink)" text-anchor="middle">S_obs = S_emit · δ^(p+α)</text>
+    <text x="300" y="308" font-size="8" fill="var(--ink-light)" text-anchor="middle">де p = 2 (неперервний струмінь) або p = 3 (дискретні плазмоїди)</text>
+    <text x="300" y="322" font-size="8" fill="var(--ink-light)" text-anchor="middle">α — спектральний індекс (S_ν ∝ ν^(-α))</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 1.</span>
+    геометрія доплерівського підсилення прецесуючого релятивістського струменя. спостережуваний потік S_obs масштабується як δ^(p+α), де δ = [γ(1 − β cos θ)]⁻¹. при зміні кута зору θ внаслідок прецесії доплерівський фактор δ змінюється на порядки, спричиняючи значну варіативність блиску без змін у внутрішній потужності джерела.
+  </figcaption>
+</figure>
+
+<p>такі релятивістські геометричні ефекти здатні генерувати не лише підвищення світності, але й драматичні зміни у спектральному розподілі енергії (sed). ретельне моделювання доводить, що фаза прецесії безпосередньо диктує спектральний стан блазара, зсуваючи пік синхротронного випромінювання у вищі або нижчі частотні діапазони залежно від орієнтації <span class="citation" data-ref="ref_s23">[s_s23, s_s78, s_s134]</span>. саме тому багатохвильовий моніторинг є незамінним інструментом для розмежування істинних фізичних спалахів акреційного диска від «геометричних ілюзій», породжених доплерівським підсиленням прецесуючого струменя.</p>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: МІКРОКВАЗАРИ НАШОЇ ГАЛАКТИКИ -->
+<!-- ============================================================ -->
+
+<h2>спостережні докази: мікроквазари нашої галактики</h2>
+
+<p>теорія прецесії релятивістських струменів знаходить своє беззаперечне підтвердження у величезній кількості емпіричних радіо- та рентгенівських даних, охоплюючи об'єкти різних класів мас та на різних етапах еволюції. варто детальніше оглянути ключові об'єкти, що стали класикою астрофізики.</p>
+
+<h3>мікроквазар ss 433 як еталонний об'єкт зоряного масштабу</h3>
+
+<p>об'єкт ss 433, який зручно розташувався у центрі химерного залишку наднової w50, є історично першим і, без сумніву, найретельніше вивченим мікроквазаром, що демонструє чітку і недвозначну прецесію струменів <span class="citation" data-ref="ref_s48">[s_s48, s_s50]</span>. ця унікальна система складається з компактного об'єкта (досі тривають дискусії, чи це чорна діра малої маси, чи масивна нейтронна зоря) та порівняно масивної зорі-донора спектрального класу а, які стрімко обертаються навколо спільного центру мас із дуже коротким орбітальним періодом у 13.082 доби <span class="citation" data-ref="ref_s48">[s_s48, s_s161, s_s162]</span>.</p>
+
+<p>речовина від зорі-донора невпинно перетікає на компактний об'єкт, формуючи навколо нього надзвичайно яскравий та потужний акреційний диск, з полюсів якого у протилежні боки викидаються два колімовані струмені плазми. кінематичний аналіз оптичних емісійних ліній водню та гелію (зокрема потужної лінії hα), а також рентгенівських спектральних даних, виявив періодичний симетричний доплерівський зсув. цей зсув переконливо свідчить про те, що струмені викидають кінетичну речовину з неймовірною швидкістю близько <span class="math">0.26c</span> (тобто 26 відсотків від швидкості світла у вакуумі) <span class="citation" data-ref="ref_s48">[s_s48, s_s50, s_s124]</span>.</p>
+
+<!-- === FIGURE 2: SS 433 Corkscrew Morphology === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 320" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">ss 433: прецесуючі струмені та морфологія «штопора»</text>
+    
+    <!-- Central binary -->
+    <circle cx="300" cy="180" r="8" fill="var(--accent)" />
+    <text x="300" y="170" font-size="8" fill="var(--ink)" text-anchor="middle">ss 433</text>
+    
+    <!-- Precession cone (dashed) -->
+    <path d="M 300 172 L 180 100" stroke="var(--rule)" stroke-width="0.7" stroke-dasharray="4,3" />
+    <path d="M 300 172 L 420 100" stroke="var(--rule)" stroke-width="0.7" stroke-dasharray="4,3" />
+    
+    <!-- Corkscrew jet (east/right) -->
+    <path d="M 300 180 
+             Q 340 160 380 170 
+             Q 420 180 450 165 
+             Q 480 150 510 160 
+             Q 540 170 560 155" 
+          stroke="var(--accent)" stroke-width="2" fill="none" />
+    
+    <!-- Corkscrew jet (west/left) -->
+    <path d="M 300 180 
+             Q 260 200 220 190 
+             Q 180 180 150 195 
+             Q 120 210 90 200 
+             Q 60 190 40 205" 
+          stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.6" />
+    
+    <!-- W50 remnant outline -->
+    <ellipse cx="300" cy="180" rx="140" ry="50" fill="none" stroke="var(--ink-light)" stroke-width="0.8" stroke-dasharray="2,4" />
+    <text x="440" y="210" font-size="8" fill="var(--ink-light)" font-style="italic">залишок наднової w50</text>
+    
+    <!-- Precession angle annotation -->
+    <path d="M 280 172 A 40 40 0 0 1 320 155" stroke="var(--ink)" stroke-width="0.7" fill="none" />
+    <text x="310" y="155" font-size="8" fill="var(--ink)">≈20°</text>
+    
+    <!-- Parameters box -->
+    <rect x="30" y="250" width="540" height="55" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="50" y="268" font-size="9" fill="var(--ink)" font-weight="bold">параметри ss 433:</text>
+    <text x="50" y="286" font-size="8" fill="var(--ink-light)">v_jet ≈ 0.26c • P_orb = 13.082 д • P_prec ≈ 162.15 діб • P_nut ≈ 6.5 діб • кут напіврозхилу конуса ≈ 20° • L_kin ≈ 10³⁹ ерг/с</text>
+    <text x="50" y="300" font-size="7" fill="var(--ink-light)">відстань ~ 5.5 кпк • маса компактного об'єкта ~ 4–10 M☉ • маса донора ~ 12 M☉</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 2.</span>
+    схематичне зображення прецесуючих струменів мікроквазара ss 433. струмені формують характерну спіральну структуру («штопор») внаслідок прецесії з періодом ~162 доби та нутації з періодом ~6.5 доби. система розташована всередині залишку наднової w50, з яким струмені активно взаємодіють, деформуючи його оболонку.
+  </figcaption>
+</figure>
+
+<p>однак вісь цього струменя зовсім не є стабільною у просторі: вона повільно описує конус із кутом напіврозхилу приблизно 20° (від 19.8 до 20 градусів за різними оцінками спостерігачів) <span class="citation" data-ref="ref_s122">[s_s122, s_s162]</span>. період цієї головної прецесії становить приблизно 162.15 доби (хоча науковці зазначають, що це значення дещо хаотично флуктуює в межах 162-164 діб через епізодичні зміни темпу масообміну між зорями) <span class="citation" data-ref="ref_s47">[s_s47, s_s49, s_s126, s_s161]</span>.</p>
+
+<p>окрім цього довгого головного періоду прецесії, ретельні спостереження фіксують короткоперіодичну нутацію (дрібне тремтіння або хитання) осі струменя з періодом близько 6.2-6.5 діб, що становить практично рівно половину орбітального періоду системи <span class="citation" data-ref="ref_s125">[s_s125, s_b8]</span>. ця нутація є прямим фізичним наслідком припливної гравітаційної взаємодії краю акреційного диска зі вторинною зорею під час їхнього тісного орбітального руху.</p>
+
+<p>прецесія струменів ss 433 формує напрочуд складну і красиву морфологію в радіодіапазоні: струмені вимальовують на тлі неба характерну фігуру «штопора» або розгорнутої спіралі, яка простягається на десятки парсеків і кінетично взаємодіє з оболонкою залишку наднової w50, перетворюючи її зі звичайної сферичної форми на видовжену структуру, що нагадує ламантина <span class="citation" data-ref="ref_s50">[s_s50, s_s163]</span>. кінетична потужність цих струменів оцінюється у велетенські <span class="math">10³⁹</span> ерг/с, що свідчить про екстремально над-еддінгтонівську акрецію <span class="citation" data-ref="ref_s123">[s_s123, s_s124]</span>.</p>
+
+<h3>мікроквазар v404 cygni та швидка прецесія</h3>
+
+<p>іншим надзвичайно показовим прикладом зоряного масштабу є чорна діра у рентгенівській подвійній системі v404 cygni. під час її потужного спалаху у 2015 році радіоінтерферометрична мережа vlba зафіксувала безпрецедентно швидку зміну орієнтації струменя. вісь викиду плазми змінювала своє положення на небосхилі на кути від −30.6° до +5.6° східніше півночі на часових шкалах від кількох хвилин до годин <span class="citation" data-ref="ref_b3">[s_b3, s_s139]</span>.</p>
+
+<p>дослідники дійшли висновку, що ця швидка кінематика є прямим свідченням ефекту лензе-тіррінга. через те, що система ймовірно отримала асиметричний поштовх під час вибуху наднової (natal kick), площина орбіти зорі-компаньйона і спін чорної діри виявилися суттєво зміщеними <span class="citation" data-ref="ref_b3">[s_b3, s_s139]</span>. над-еддінгтонівська акреція під час спалаху призвела до утворення геометрично товстого, оптично щільного «slim disk» (товстого диска), який, маючи високий внутрішній тиск, не розривався, а прецесував як єдине тверде тіло, тягнучи за собою магнітні поля і, відповідно, релятивістські струмені <span class="citation" data-ref="ref_b3">[s_b3, s_s139, s_s154]</span>. період цієї прецесії був настільки коротким (верхня межа близько 2.6 години), що спостерігачам довелося відмовитися від стандартних багатогодинних радіоінтерферометричних експозицій, аби уникнути розмиття зображення <span class="citation" data-ref="ref_b3">[s_b3, s_s139]</span>.</p>
+
+<!-- === TABLE 1: Comparative Parameters === -->
+<div class="table-wrapper">
+  <table class="sortable">
+    <caption>таблиця 1. порівняльні спостережні параметри ключових астрофізичних об'єктів з прецесуючими струменями</caption>
+    <thead>
+      <tr>
+        <th>об'єкт</th>
+        <th>класифікація</th>
+        <th>орієнтовна відстань</th>
+        <th>період головної прецесії</th>
+        <th>період нутації</th>
+        <th>ключовий механізм (провідна гіпотеза)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ss 433</td>
+        <td>мікроквазар</td>
+        <td class="numeric">~ 5.5 кпк</td>
+        <td class="numeric">~ 162.15 діб</td>
+        <td class="numeric">~ 6.5 діб</td>
+        <td>припливна взаємодія у подвійній системі</td>
+      </tr>
+      <tr>
+        <td>v404 cyg</td>
+        <td>рентгенівська подвійна</td>
+        <td class="numeric">~ 2.4 кпк</td>
+        <td class="numeric">хвилини – години</td>
+        <td class="numeric">не виявлено</td>
+        <td>ефект лензе-тіррінга (товстий диск)</td>
+      </tr>
+      <tr>
+        <td>oj 287</td>
+        <td>блазар (активне ядро)</td>
+        <td class="numeric">z = 0.306</td>
+        <td class="numeric">~ 22 – 24 роки</td>
+        <td class="numeric">~ 1 рік</td>
+        <td>подвійна smbh або дискова прецесія</td>
+      </tr>
+      <tr>
+        <td>pks 2300</td>
+        <td>квазар (s-радіогалак.)</td>
+        <td class="numeric">z = 0.128</td>
+        <td class="numeric">~ 12 млн років</td>
+        <td class="numeric">не виявлено</td>
+        <td>подвійна smbh (наслідок недавнього злиття)</td>
+      </tr>
+      <tr>
+        <td>3c 84</td>
+        <td>радіогалактика</td>
+        <td class="numeric">z = 0.0176</td>
+        <td class="numeric">~ 40 років</td>
+        <td class="numeric">не виявлено</td>
+        <td>подвійна smbh</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: НАДМАСИВНІ ЧОРНІ ДІРИ ТА БЛАЗАРИ -->
+<!-- ============================================================ -->
+
+<h2>спостережні докази: надмасивні чорні діри та блазари</h2>
+
+<p>переходячи до макроскопічних масштабів, дослідники стикаються з об'єктами, де маси чорних дір сягають мільйонів та мільярдів мас сонця, а довжина струменів вимірюється світловими роками та парсеками.</p>
+
+<h3>блазар oj 287: розеттський камінь астрофізики</h3>
+
+<p>якщо ss 433 є прототипом прецесуючого мікроквазара в межах нашої галактики, то надяскравий блазар oj 287, що знаходиться на космологічному червоному зсуві <span class="math">z = 0.306</span> (відстань світності близько 1.592 гпк), по праву вважається справжнім «розеттським каменем» для вивчення прецесії у надмасивних масштабах <span class="citation" data-ref="ref_b2">[s_b2, s_b8]</span>. цей унікальний об'єкт привертає пильну увагу астрофізиків з кінця хіх століття, оскільки його оптична крива блиску була ретельно відновлена за фотографічними пластинками і містить архівні дані за понад 130 років безперервних спостережень <span class="citation" data-ref="ref_s132">[s_s132, s_s215, s_b2]</span>.</p>
+
+<p>історично oj 287 славиться своїми потужними подвійними оптичними спалахами, які повторюються з дивовижною квазіперіодичністю близько 11.65 років <span class="citation" data-ref="ref_b2">[s_b2, s_s53]</span>. традиційна аналітична модель, розроблена дослідниками валтоненом, піхайокі та їхніми співавторами, пояснювала ці спалахи суто орбітальною кінематикою: менша вторинна чорна діра (з масою <span class="math">~ 10⁸ M☉</span>) обертається дуже витягнутою орбітою навколо гігантської первинної чорної діри (з екстремальною масою <span class="math">1.8 × 10¹⁰ M☉</span>) і двічі за кожен орбітальний період жорстко пробиває її товстий акреційний диск <span class="citation" data-ref="ref_s53">[s_s53, s_s166, s_b2]</span>. ці надзвукові удари призводять до раптового виділення величезної кількості теплової енергії у вигляді теплового гальмівного випромінювання (bremsstrahlung) <span class="citation" data-ref="ref_s167">[s_s167, s_s370]</span>.</p>
+
+<p>проте найновіші багаторічні радіоінтерферометричні дані свідчать про значно складнішу, а можливо й інакшу природу цього феномену. безпрецедентно масштабний аналіз 120 високоточних спостережень масиву vlba (very long baseline array) на частоті 15 ггц, що охоплюють період з квітня 1995 по квітень 2017 року, дозволив команді під керівництвом сільке брітцен створити скрупульозну кінематичну модель струменя oj 287 <span class="citation" data-ref="ref_s8">[s_s8, s_s24, s_b2]</span>. комп'ютерне моделювання (modelfit-аналіз), в якому покроково відстежувалися індивідуальні викинуті плазмові компоненти (марковані від с1 до с12, що викидалися зі швидкостями від 0.32с до 0.70с), незаперечно показало, що радіострумінь об'єкта прецесує з дуже тривалим періодом <span class="math">24 ± 2</span> роки <span class="citation" data-ref="ref_b2">[s_b2, s_s8]</span>. водночас з'ясувалося, що вісь струменя здійснює ще й швидший нутаційний рух (обертання осі) з періодом близько 1 року <span class="citation" data-ref="ref_b8">[s_b8, s_s24]</span>.</p>
+
+<!-- === FIGURE 3: OJ 287 VLBA Kinematics === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 340" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">oj 287: кінематика плазмових вузлів за даними vlba (15 ггц)</text>
+    
+    <!-- Sky plane -->
+    <line x1="250" y1="300" x2="250" y2="80" stroke="var(--ink)" stroke-width="0.8" />
+    <line x1="100" y1="200" x2="550" y2="200" stroke="var(--ink)" stroke-width="0.8" />
+    
+    <text x="555" y="204" font-size="8" fill="var(--ink)">ra (mas)</text>
+    <text x="240" y="75" font-size="8" fill="var(--ink)">dec (mas)</text>
+    
+    <!-- Core -->
+    <circle cx="250" cy="200" r="5" fill="var(--accent)" />
+    <text x="258" y="195" font-size="8" fill="var(--accent)" font-weight="bold">ядро</text>
+    
+    <!-- Component trajectories -->
+    <!-- C1 -->
+    <circle cx="220" cy="185" r="3" fill="var(--ink)" />
+    <text x="205" y="182" font-size="7" fill="var(--ink)">c1 (1994.1)</text>
+    <line x1="250" y1="200" x2="220" y2="185" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,2" />
+    
+    <!-- C2 -->
+    <circle cx="215" cy="178" r="3" fill="var(--ink)" />
+    <text x="195" y="175" font-size="7" fill="var(--ink)">c2 (1994.8)</text>
+    
+    <!-- C5 -->
+    <circle cx="195" cy="165" r="3" fill="var(--ink)" />
+    <text x="170" y="162" font-size="7" fill="var(--ink)">c5 (1997.1)</text>
+    
+    <!-- C8 -->
+    <circle cx="175" cy="148" r="3" fill="var(--ink)" />
+    <text x="145" y="145" font-size="7" fill="var(--ink)">c8 (2000.1)</text>
+    
+    <!-- C12 -->
+    <circle cx="155" cy="130" r="3" fill="var(--ink)" />
+    <text x="120" y="127" font-size="7" fill="var(--ink)">c12 (2007.3)</text>
+    
+    <!-- Curved jet path (precession) -->
+    <path d="M 250 200 Q 230 190 220 185 Q 210 175 195 165 Q 180 155 175 148 Q 165 138 155 130" 
+          stroke="var(--accent)" stroke-width="1.8" fill="none" />
+    
+    <!-- Precession direction arrow -->
+    <path d="M 230 192 A 40 30 0 0 0 200 165" stroke="var(--ink)" stroke-width="0.8" fill="none" marker-end="url(#arrowPrec3)" />
+    <text x="235" y="180" font-size="8" fill="var(--ink)" font-style="italic">прецесія</text>
+    
+    <defs>
+      <marker id="arrowPrec3" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <polygon points="0 0, 6 2, 0 4" fill="var(--ink)" />
+      </marker>
+    </defs>
+    
+    <!-- Table inset -->
+    <rect x="350" y="60" width="220" height="130" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="460" y="78" font-size="8" fill="var(--ink)" text-anchor="middle" font-weight="bold">параметри вузлів</text>
+    <text x="360" y="95" font-size="7" fill="var(--ink-light)">вузол | епоха | v_app (c) | pa (°)</text>
+    <line x1="355" y1="100" x2="565" y2="100" stroke="var(--rule)" stroke-width="0.4" />
+    <text x="360" y="115" font-size="7" fill="var(--ink)">c1 | 1994.1 | 0.70 | -94.2</text>
+    <text x="360" y="130" font-size="7" fill="var(--ink)">c2 | 1994.8 | 0.68 | -92.7</text>
+    <text x="360" y="145" font-size="7" fill="var(--ink)">c5 | 1997.1 | 0.47 | -112.4</text>
+    <text x="360" y="160" font-size="7" fill="var(--ink)">c8 | 2000.1 | 0.45 | -124.7</text>
+    <text x="360" y="175" font-size="7" fill="var(--ink)">c12 | 2007.3 | 0.34 | -136.4</text>
+    
+    <text x="460" y="195" font-size="7" fill="var(--ink-light)" text-anchor="middle">britzen et al. (2018), mnras</text>
+    
+    <!-- Scale invariance annotation -->
+    <rect x="30" y="270" width="540" height="40" fill="var(--accent)" opacity="0.06" stroke="var(--rule)" stroke-width="0.5" />
+    <text x="300" y="288" font-size="9" fill="var(--ink)" text-anchor="middle">масштабна інваріантність: P_prec / P_nut (oj 287) ≈ 24 / 1 = 24 • P_prec / P_nut (ss 433) ≈ 162 / 6.5 ≈ 25</text>
+    <text x="300" y="304" font-size="8" fill="var(--ink-light)" text-anchor="middle">співвідношення періодів зберігається при масштабуванні мас у ~10⁸ разів</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 3.</span>
+    кінематика плазмових вузлів у струмені блазара oj 287 за даними vlba на частоті 15 ггц. послідовність викидів (c1–c12) демонструє систематичний дрейф позиційного кута від −92° до −136°, що відповідає прецесії осі струменя з періодом ~24 роки. видима швидкість вузлів зменшується з часом внаслідок зміни кута зору θ.
+  </figcaption>
+</figure>
+
+<p>автори цього дослідження звернули увагу на вражаючу математичну подібність: відношення періоду прецесії до періоду нутації в oj 287 (24 роки до 1 року) майже точнісінько відповідає пропорціям у згаданому раніше мікроквазарі ss 433 (162 дні до 6.5 днів), будучи відмасштабованим у приблизно 50-56 разів <span class="citation" data-ref="ref_s8">[s_s8, s_b8, s_s234]</span>. це вказує на фундаментальну масштабну інваріантність фізичних процесів акреції та формування струменів незалежно від маси центральної чорної діри.</p>
+
+<p>більше того, було переконливо доведено, що більшість оптичних спалахів і варіацій радіопотоку oj 287 можна пояснити винятково геометричними ефектами, про які йшлося вище. коли прецесуючий струмінь наближається до променя зору спостерігача, релятивістське доплерівське підсилення багаторазово збільшує спостережувану яскравість синхротронного випромінювання <span class="citation" data-ref="ref_s8">[s_s8, s_s24, s_b8]</span>. відповідно, катастрофічна фізична модель фізичного пробивання диска вторинною чорною дірою не є суворо обов'язковою для пояснення варіативності кривої блиску (випромінювання має не теплове, а синхротронне походження), хоча сама наявність подвійної системи (або дуже потужного ефекту лензе-тіррінга) є необхідною умовою для забезпечення самого факту і часової шкали прецесії 22-24 роки <span class="citation" data-ref="ref_b2">[s_b2, s_b8, s_s52, s_s114]</span>. нові оцінки маси центрального об'єкта за цією суто прецесійною моделлю дозволяють суттєво знизити масу первинної чорної діри до <span class="math">10⁸ M☉</span>, цілком усуваючи необхідність у надмасивних показниках <span class="math">10¹⁰ M☉</span> <span class="citation" data-ref="ref_s52">[s_s52, s_s167, s_s232]</span>. також важливо зазначити, що точні вимірювання дозволили вирахувати безрозмірний спін головної чорної діри на рівні <span class="math">0.313 ± 0.01</span>, а спостереження підтвердили втрату орбітальної енергії на випромінювання гравітаційних хвиль із точністю до 2% згідно з передбаченнями айнштайна <span class="citation" data-ref="ref_b2">[s_b2, s_s79]</span>.</p>
+
+<h3>інші видатні об'єкти з прецесуючими струменями: 3с 84 та 3с 273</h3>
+
+<p>спостереження прецесії не обмежуються лише одним oj 287. яскрава радіогалактика 3с 84 (відома також як ngc 1275 або персей а), розташована в центрі активного злиття галактик, демонструє чітку прецесію свого парсекового струменя. перехресний аналіз 42 спостережень vlba між 1999 та 2017 роками виявив, що вісь струменя прецесує з періодом близько 40 років <span class="citation" data-ref="ref_s214">[s_s214, s_s289]</span>. надзвичайно цікавим є те, що ця радіогалактика є джерелом потужних гамма-променів тев-діапазону (tev). дослідники припускають, що тев-спалахи, зафіксовані телескопами magic, безпосередньо корелюють із точкою максимального відхилення прецесуючого струменя. у цій фазі струмінь «врізається» у нові, ще не збурені області рентгенівського газу навколишнього середовища, створюючи надпотужні ударні хвилі, які працюють як прискорювачі частинок до екстремальних енергій <span class="citation" data-ref="ref_s214">[s_s214, s_s289]</span>.</p>
+
+<p>інший хрестоматійний об'єкт — квазар 3с 273, що став першим в історії квазаром, від якого зафіксували гамма-випромінювання (ще у 1976 році супутником cos-b) <span class="citation" data-ref="ref_s56">[s_s56]</span>. оптичні та радіоспостереження його струменя показують унікальну морфологію: струмінь складається з низки яскравих вузлів, і його орієнтація раптово змінилася на 2° у 2003 році (при тому, що власний кут розхилу струменя становить лише 1.1°) <span class="citation" data-ref="ref_s55">[s_s55]</span>. крім того, космічні інтерферометри дозволили вперше зафіксувати в 3с 273 геометричний перехід форми струменя від параболічної (у зоні магнітогідродинамічної колімації поблизу чорної діри) до конічної на більших відстанях <span class="citation" data-ref="ref_s57">[s_s57, s_s58]</span>. цей перехід та зсуви напрямку також органічно вписуються у моделі повільної прецесії центрального джерела.</p>
+
+<!-- === TABLE 2: VLBA Data OJ 287 === -->
+<div class="table-wrapper">
+  <table class="sortable">
+    <caption>таблиця 2. кінематичні параметри індивідуальних плазмових вузлів у струмені блазара oj 287 (за даними vlba, 15 ггц) [s_b2]</caption>
+    <thead>
+      <tr>
+        <th>ідентифікатор вузла</th>
+        <th>епоха викиду з ядра (рік)</th>
+        <th>видима швидкість (β_app, у частках c)</th>
+        <th>позиційний кут (η, градуси)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>c1</td>
+        <td class="numeric">1994.1</td>
+        <td class="numeric">0.70 ± 0.05</td>
+        <td class="numeric">-94.20 ± 0.19</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td class="numeric">1994.8</td>
+        <td class="numeric">0.68 ± 0.02</td>
+        <td class="numeric">-92.70 ± 0.52</td>
+      </tr>
+      <tr>
+        <td>c5</td>
+        <td class="numeric">1997.1</td>
+        <td class="numeric">0.47 ± 0.01</td>
+        <td class="numeric">-112.40 ± 1.06</td>
+      </tr>
+      <tr>
+        <td>c8</td>
+        <td class="numeric">2000.1</td>
+        <td class="numeric">0.45 ± 0.01</td>
+        <td class="numeric">-124.70 ± 0.32</td>
+      </tr>
+      <tr>
+        <td>c12</td>
+        <td class="numeric">2007.3</td>
+        <td class="numeric">0.34 ± 0.02</td>
+        <td class="numeric">-136.40 ± 0.12</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-note">
+    дані таблиці 2 наочно демонструють, як зі зміною часу викиду позиційний кут струменя повільно зміщується від −92° до −136°, описуючи фрагмент прецесійного конуса, тоді як видима швидкість поступово зменшується через зміну кута до променя зору.
+  </div>
+</div>
+
+<!-- === FIGURE 4: Scale Invariance Visualization === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 280" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">масштабна інваріантність: від мікроквазарів до блазарів</text>
+    
+    <!-- Mass scale axis -->
+    <line x1="80" y1="200" x2="560" y2="200" stroke="var(--ink)" stroke-width="1" />
+    
+    <text x="320" y="230" font-size="9" fill="var(--ink)" text-anchor="middle">маса центрального об'єкта (логарифмічна шкала)</text>
+    
+    <!-- Tick marks -->
+    <line x1="120" y1="195" x2="120" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="120" y="218" font-size="8" fill="var(--ink)" text-anchor="middle">10 M☉</text>
+    
+    <line x1="240" y1="195" x2="240" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="240" y="218" font-size="8" fill="var(--ink)" text-anchor="middle">10⁴ M☉</text>
+    
+    <line x1="360" y1="195" x2="360" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="360" y="218" font-size="8" fill="var(--ink)" text-anchor="middle">10⁷ M☉</text>
+    
+    <line x1="480" y1="195" x2="480" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="480" y="218" font-size="8" fill="var(--ink)" text-anchor="middle">10¹⁰ M☉</text>
+    
+    <!-- Objects -->
+    <!-- SS 433 -->
+    <circle cx="130" cy="160" r="5" fill="var(--accent)" />
+    <text x="130" y="148" font-size="9" fill="var(--accent)" text-anchor="middle" font-weight="bold">ss 433</text>
+    <text x="130" y="138" font-size="7" fill="var(--ink-light)" text-anchor="middle">P_prec ≈ 162 д</text>
+    
+    <!-- V404 Cyg -->
+    <circle cx="150" cy="175" r="4" fill="var(--accent)" />
+    <text x="150" y="190" font-size="8" fill="var(--accent)" text-anchor="middle">v404 cyg</text>
+    <text x="150" y="200" font-size="7" fill="var(--ink-light)" text-anchor="middle">хв-год</text>
+    
+    <!-- OJ 287 -->
+    <circle cx="450" cy="155" r="5" fill="var(--accent)" />
+    <text x="450" y="143" font-size="9" fill="var(--accent)" text-anchor="middle" font-weight="bold">oj 287</text>
+    <text x="450" y="133" font-size="7" fill="var(--ink-light)" text-anchor="middle">P_prec ≈ 24 р</text>
+    
+    <!-- 3C 84 -->
+    <circle cx="420" cy="170" r="4" fill="var(--accent)" />
+    <text x="420" y="185" font-size="8" fill="var(--accent)" text-anchor="middle">3c 84</text>
+    <text x="420" y="195" font-size="7" fill="var(--ink-light)" text-anchor="middle">~40 р</text>
+    
+    <!-- PKS 2300 -->
+    <circle cx="500" cy="160" r="4" fill="var(--accent)" />
+    <text x="510" y="155" font-size="8" fill="var(--accent)" text-anchor="start">pks 2300</text>
+    <text x="510" y="167" font-size="7" fill="var(--ink-light)" text-anchor="start">~12 млн р</text>
+    
+    <!-- Connecting trend line -->
+    <path d="M 130 160 Q 250 200 450 155" stroke="var(--ink-light)" stroke-width="1" fill="none" stroke-dasharray="6,4" />
+    <text x="280" y="185" font-size="8" fill="var(--ink-light)" font-style="italic">P ∝ M (приблизно)</text>
+    
+    <!-- Scale invariance equation -->
+    <rect x="60" y="240" width="480" height="30" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.5" />
+    <text x="300" y="260" font-size="9" fill="var(--ink)" text-anchor="middle">P_prec / P_nut ≈ const ≈ 24–25 (для ss 433 та oj 287) — свідчення масштабної інваріантності</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 4.</span>
+    масштабна інваріантність фізики прецесії релятивістських струменів. об'єкти з масами, що різняться на 8–9 порядків (від мікроквазарів зоряних мас до надмасивних чорних дір у блазарах), демонструють подібну кінематичну поведінку. співвідношення періоду прецесії до періоду нутації залишається сталим (~24–25), що вказує на універсальність фізичних механізмів акреції та генерації струменів.
+  </figcaption>
+</figure>
+
+<div class="page-navigation">
+  <a href="paradigm.html" class="prev">← парадигма</a>
+  <a href="glossary.html" class="glossary-link">[ глосарій ]</a>
+  <a href="effects.html" class="next">макро-наслідки →</a>
+</div>
+
+<!-- === FOOTER METADATA === -->
+<div class="footer-meta">
+  <span>прецесія релятивістських джетів — preprint v1.0 // секція: спостережні докази</span>
+  <span>сторінка 10–15</span>
+</div>
+
+<!-- === HIDDEN REFERENCES === -->
+<div style="display: none;">
+  <span id="ref_s169">s_s169: Marscher A.P., Gear W.K. (1985), ApJ, 298, 114</span>
+  <span id="ref_s336">s_s336: Türler M. et al. (2000), A&AS, 142, 245</span>
+  <span id="ref_s23">s_s23: Caproni A., Abraham Z., Monteiro H. (2013), MNRAS, 428, 280</span>
+  <span id="ref_s115">s_s115: Raiteri C.M. et al. (2017), Nature, 552, 374</span>
+  <span id="ref_s134">s_s134: Stirling A. et al. (2003), MNRAS, 341, 405</span>
+  <span id="ref_b8">s_b8: Britzen S. et al. (2023), A&A, 670, A108</span>
+  <span id="ref_b2">s_b2: Britzen S. et al. (2018), MNRAS, 478, 3199</span>
+  <span id="ref_s8">s_s8: Britzen S. et al. (2017), A&A, 602, A29</span>
+  <span id="ref_s24">s_s24: Britzen S. et al. (2023), A&A, 670, A108</span>
+  <span id="ref_s78">s_s78: Larionov V.M. et al. (2013), ApJ, 768, 55</span>
+  <span id="ref_s48">s_s48: Margon B. (1984), ARA&A, 22, 507</span>
+  <span id="ref_s50">s_s50: Dubner G. et al. (1998), AJ, 116, 1842</span>
+  <span id="ref_s161">s_s161: Fabrika S. (2004), ASPRv, 12, 1</span>
+  <span id="ref_s162">s_s162: Cherepashchuk A.M. et al. (2018), A&A, 619, A136</span>
+  <span id="ref_s124">s_s124: Marshall H.L. et al. (2002), ApJ, 564, 941</span>
+  <span id="ref_s122">s_s122: Stirling A. et al. (2002), MNRAS, 337, 657</span>
+  <span id="ref_s47">s_s47: Waisberg I. et al. (2019), A&A, 624, A127</span>
+  <span id="ref_s49">s_s49: Collins G.W. et al. (1981), ApJ, 243, 864</span>
+  <span id="ref_s126">s_s126: Vermeulen R.C. et al. (1993), A&A, 270, 177</span>
+  <span id="ref_s125">s_s125: Katz J.I. et al. (1982), ApJ, 260, 780</span>
+  <span id="ref_s163">s_s163: Goodall P.T. et al. (2011), MNRAS, 414, 2838</span>
+  <span id="ref_s123">s_s123: Brinkmann W. et al. (2005), A&A, 433, 101</span>
+  <span id="ref_b3">s_b3: Miller-Jones J.C.A. et al. (2019), Nature, 569, 374</span>
+  <span id="ref_s139">s_s139: Miller-Jones J.C.A. et al. (2015), MNRAS, 453, 3918</span>
+  <span id="ref_s154">s_s154: Poutanen J. et al. (2022), Science, 375, 874</span>
+  <span id="ref_s132">s_s132: Valtonen M.J. et al. (2008), Nature, 452, 851</span>
+  <span id="ref_s215">s_s215: Sillanpää A. et al. (1988), ApJ, 325, 628</span>
+  <span id="ref_s53">s_s53: Valtonen M.J. et al. (2016), ApJ, 819, L37</span>
+  <span id="ref_s166">s_s166: Valtonen M.J. et al. (2011), ApJ, 729, 33</span>
+  <span id="ref_s167">s_s167: Valtonen M.J. et al. (2019), Galaxies, 7, 83</span>
+  <span id="ref_s370">s_s370: Ivanov P.B. et al. (1998), MNRAS, 300, 577</span>
+  <span id="ref_s234">s_s234: Tateyama C.E. et al. (1998), ApJ, 500, 810</span>
+  <span id="ref_s52">s_s52: Valtonen M.J. et al. (2020), MNRAS, 491, 1083</span>
+  <span id="ref_s114">s_s114: Qian S.J. et al. (2017), MNRAS, 466, 184</span>
+  <span id="ref_s232">s_s232: Valtonen M.J. et al. (2021), ApJ, 908, 150</span>
+  <span id="ref_s79">s_s79: Laine S. et al. (2020), ApJ, 894, L1</span>
+  <span id="ref_s214">s_s214: Nagai H. et al. (2010), PASJ, 62, L11</span>
+  <span id="ref_s289">s_s289: Suzuki K. et al. (2012), ApJ, 746, 140</span>
+  <span id="ref_s56">s_s56: Curtis H.D. (1918), Publ. Lick Obs., 13, 31</span>
+  <span id="ref_s55">s_s55: Lobanov A.P., Zensus J.A. (2001), Science, 294, 128</span>
+  <span id="ref_s57">s_s57: Hada K. et al. (2018), ApJ, 860, 141</span>
+  <span id="ref_s58">s_s58: Akiyama K. et al. (2015), ApJ, 809, 10</span>
+</div>
+
+<script src="global.js"></script>
+</body>
+</html>
