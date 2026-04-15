@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>динаміка акреційних дисків — бардін-петтерсон та розрив</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- === PREPRINT HEADER (arXiv Strip) === -->
+<div class="preprint-header">
+  <span class="left">astro-ph.HE // draft version april 2026</span>
+  <span class="right">precession of relativistic jets: disk dynamics</span>
+</div>
+
+<!-- === TITLE SECTION === -->
+<h1>динаміка акреційних дисків: ефект бардіна-петтерсона та розрив диска</h1>
+
+<!-- === ABSTRACT === -->
+<div class="abstract">
+  <p><strong>abstract</strong> розглядається внутрішня динаміка нахилених акреційних дисків навколо обертових чорних дір. аналізуються режими передачі викривлення (дифузійний, хвильовий), формування радіуса бардіна-петтерсона, жорстка прецесія товстих дисків та явище розриву диска при великих кутах нахилу. наводяться результати сучасних загальнорелятивістських магнітогідродинамічних симуляцій.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION: ДИНАМІКА АКРЕЦІЙНИХ ДИСКІВ -->
+<!-- ============================================================ -->
+
+<h2>динаміка акреційних дисків: ефект бардіна-петтерсона та розрив диска</h2>
+
+<p>сильна радіальна залежність прецесії лензе-тіррінга мала б, на перший погляд, призводити до швидкого та неминучого руйнування цілісності акреційного диска через інтенсивне диференційне обертання його шарів. проте у 1975 році дослідники джеймс бардін та якобус петтерсон довели, що внутрішня кінематична в'язкість диска ефективно протидіє цьому руйнуванню, призводячи до формування набагато складнішої та стабільнішої просторової конфігурації <span class="citation" data-ref="ref_s10">[s_s10, s_s299]</span>. взаємодія релятивістського крутного моменту та в'язкого тертя змушує внутрішню частину диска вирівнюватися (або, за певних умов, контр-вирівнюватися) з екваторіальною площиною чорної діри, тоді як зовнішня частина зберігає свій початковий просторовий нахил <span class="citation" data-ref="ref_b7">[s_b7, s_b9, s_s150]</span>. плавна перехідна зона між цими двома областями отримала в літературі назву радіуса бардіна-петтерсона (<span class="math">r_bp</span>) <span class="citation" data-ref="ref_s45">[s_s45, s_s148]</span>.</p>
+
+<!-- === FIGURE 1: Bardeen-Petterson Effect Diagram === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 650 380" style="background: var(--paper);">
+    <defs>
+      <linearGradient id="diskGradInner" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--ink)" stop-opacity="0.15" />
+        <stop offset="40%" stop-color="var(--ink)" stop-opacity="0.08" />
+        <stop offset="100%" stop-color="var(--ink)" stop-opacity="0.03" />
+      </linearGradient>
+      <linearGradient id="diskGradOuter" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--ink)" stop-opacity="0.05" />
+        <stop offset="60%" stop-color="var(--ink)" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="var(--ink)" stop-opacity="0.15" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Black hole -->
+    <circle cx="120" cy="190" r="35" fill="var(--ink)" opacity="0.85" />
+    <circle cx="120" cy="190" r="35" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+    <text x="120" y="195" font-size="9" fill="var(--paper)" text-anchor="middle" font-weight="bold">чд</text>
+    
+    <!-- Spin axis (vertical) -->
+    <line x1="120" y1="155" x2="120" y2="70" stroke="var(--accent)" stroke-width="2" />
+    <polygon points="115,75 120,58 125,75" fill="var(--accent)" />
+    <text x="132" y="75" font-size="10" fill="var(--accent)" font-style="italic">спін чд</text>
+    
+    <!-- Inner aligned disk (Bardeen-Petterson region) -->
+    <ellipse cx="200" cy="190" rx="65" ry="8" stroke="var(--ink)" stroke-width="1.5" fill="url(#diskGradInner)" />
+    <ellipse cx="200" cy="190" rx="40" ry="4" stroke="var(--ink-light)" stroke-width="0.6" fill="none" />
+    
+    <!-- Outer tilted disk -->
+    <ellipse cx="380" cy="200" rx="140" ry="30" stroke="var(--ink)" stroke-width="1.5" fill="url(#diskGradOuter)" transform="rotate(-12, 380, 200)" />
+    <ellipse cx="380" cy="200" rx="90" ry="18" stroke="var(--ink-light)" stroke-width="0.6" fill="none" transform="rotate(-12, 380, 200)" stroke-dasharray="3,3" />
+    
+    <!-- Transition zone (warp) -->
+    <path d="M 230 185 Q 280 175 330 188" stroke="var(--accent)" stroke-width="2" fill="none" stroke-dasharray="8,4" />
+    <path d="M 240 195 Q 290 205 340 212" stroke="var(--accent)" stroke-width="1.2" fill="none" stroke-dasharray="4,3" />
+    
+    <!-- r_bp label -->
+    <line x1="275" y1="170" x2="275" y2="230" stroke="var(--ink)" stroke-width="0.8" stroke-dasharray="2,4" />
+    <text x="260" y="165" font-size="10" fill="var(--ink)" font-weight="bold">r_bp</text>
+    <text x="240" y="245" font-size="9" fill="var(--ink-light)" font-style="italic">радіус бардіна-петтерсона</text>
+    
+    <!-- Vectors -->
+    <!-- L_disk outer -->
+    <line x1="380" y1="200" x2="320" y2="120" stroke="var(--ink-light)" stroke-width="1.5" />
+    <polygon points="315,125 308,115 322,118" fill="var(--ink-light)" />
+    <text x="260" y="110" font-size="10" fill="var(--ink-light)" font-style="italic">L_outer</text>
+    
+    <!-- L_disk inner -->
+    <line x1="200" y1="190" x2="200" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+    <polygon points="195,145 200,133 205,145" fill="var(--ink)" />
+    <text x="210" y="140" font-size="10" fill="var(--ink)" font-style="italic">L_inner</text>
+    
+    <!-- Jet direction -->
+    <line x1="120" y1="155" x2="80" y2="60" stroke="var(--accent)" stroke-width="2.5" />
+    <polygon points="75,65 68,52 82,58" fill="var(--accent)" />
+    <text x="35" y="55" font-size="9" fill="var(--accent)" font-style="italic">струмінь</text>
+    
+    <!-- Annotations -->
+    <text x="140" y="310" font-size="10" fill="var(--ink)">внутрішній диск</text>
+    <text x="145" y="324" font-size="9" fill="var(--ink-light)">(вирівняний зі спіном чд)</text>
+    
+    <text x="420" y="290" font-size="10" fill="var(--ink)">зовнішній диск</text>
+    <text x="425" y="304" font-size="9" fill="var(--ink-light)">(зберігає початковий нахил)</text>
+    
+    <text x="270" y="280" font-size="9" fill="var(--accent)" font-style="italic">перехідна зона</text>
+    <text x="272" y="294" font-size="8" fill="var(--accent)">(викривлення)</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 1.</span>
+    схематичне зображення ефекту бардіна-петтерсона. внутрішня частина акреційного диска (r &lt; r_bp) вирівнюється з екваторіальною площиною чорної діри завдяки в'язким напруженням, тоді як зовнішня частина зберігає початковий нахил. плавна перехідна зона (викривлення) розділяє ці дві області. релятивістський струмінь орієнтується вздовж вектора кутового моменту зовнішнього диска.
+  </figcaption>
+</figure>
+
+<p>подальші розвідки показали, що просторова динаміка цього викривленого диска критично залежить від співвідношення між безрозмірним параметром в'язкості шакури-сюняєва (позначається як <span class="math">α</span>) та відносною товщиною диска (відношенням висоти шкали до радіуса, <span class="math">h/r</span>). аналітичні та чисельні дослідження виділяють два кардинально відмінні режими передачі викривлення:</p>
+
+<!-- === TABLE: Physical Regimes of Warped Accretion Disks === -->
+<div class="table-wrapper">
+  <table class="sortable">
+    <caption>таблиця 1. фізичні режими викривлених акреційних дисків</caption>
+    <thead>
+      <tr>
+        <th>фізичний режим</th>
+        <th>ключова умова</th>
+        <th>механізм передачі викривлення</th>
+        <th>кінематика диска</th>
+        <th>вплив на релятивістський струмінь</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>дифузійний</td>
+        <td class="numeric">α &gt; h/r</td>
+        <td>дифузія в'язких напружень</td>
+        <td>плавне вирівнювання бардіна-петтерсона</td>
+        <td>струмінь вирівнюється із зовнішнім диском</td>
+      </tr>
+      <tr>
+        <td>хвильовий</td>
+        <td class="numeric">α &lt; h/r</td>
+        <td>згинальні гідродинамічні хвилі</td>
+        <td>осциляції кута нахилу</td>
+        <td>мікроколивання осі струменя</td>
+      </tr>
+      <tr>
+        <td>товстий диск</td>
+        <td class="numeric">h/r ~ 1</td>
+        <td>акустичний зв'язок по всій товщині</td>
+        <td>жорстка прецесія як єдиного твердого тіла</td>
+        <td>швидка, когерентна прецесія струменя</td>
+      </tr>
+      <tr>
+        <td>розривний</td>
+        <td class="numeric">великий початковий нахил</td>
+        <td>крутний момент домінує над в'язкістю</td>
+        <td>формування розірваних незалежних кілець</td>
+        <td>втрата стабільності, qpo-модуляції</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>по-перше, дифузійний режим, що реалізується в оптично товстих, але геометрично тонких дисках, коли параметр в'язкості перевищує відносну товщину (<span class="math">α > h/r</span>). у цьому фізичному стані викривлення поширюється крізь речовину подібно до класичного процесу теплової дифузії, забезпечуючи плавне формування радіуса бардіна-петтерсона <span class="citation" data-ref="ref_s69">[s_s69, s_s151]</span>.</p>
+
+<p>по-друге, хвильовий режим, який виникає, коли внутрішня в'язкість є малою (<span class="math">α < h/r</span>). за таких умов викривлення поширюється у вигляді згинальних хвиль, що рухаються зі швидкістю, порівнянною зі швидкістю звуку в локальному плазмовому середовищі, що часто призводить до коливань кута нахилу та менш стабільної конфігурації <span class="citation" data-ref="ref_s69">[s_s69, s_s240, s_s241]</span>.</p>
+
+<!-- === FIGURE 2: Wave vs Diffusive Regime === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 300" style="background: var(--paper);">
+    <!-- Top panel: Diffusive regime -->
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">(a) дифузійний режим (α &gt; h/r)</text>
+    
+    <!-- Disk cross-section - smooth warp -->
+    <path d="M 50 140 Q 150 130 250 120 Q 350 110 450 115 Q 500 118 550 120" 
+          stroke="var(--ink)" stroke-width="1.8" fill="none" />
+    <path d="M 50 160 Q 150 150 250 140 Q 350 130 450 135 Q 500 138 550 140" 
+          stroke="var(--ink-light)" stroke-width="1" fill="none" stroke-dasharray="4,3" />
+    
+    <!-- Midplane -->
+    <path d="M 50 150 Q 150 140 250 130 Q 350 120 450 125 Q 500 128 550 130" 
+          stroke="var(--accent)" stroke-width="1.2" fill="none" />
+    
+    <!-- Arrows showing viscous diffusion -->
+    <path d="M 150 110 Q 180 100 200 115" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowSmall)" />
+    <path d="M 300 105 Q 330 95 350 110" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowSmall)" />
+    <path d="M 400 115 Q 420 105 440 120" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowSmall)" />
+    
+    <text x="250" y="90" font-size="9" fill="var(--ink-light)" font-style="italic" text-anchor="middle">плавне вирівнювання</text>
+    
+    <!-- Bottom panel: Wave regime -->
+    <text x="30" y="210" font-size="11" fill="var(--ink)" font-weight="bold">(b) хвильовий режим (α &lt; h/r)</text>
+    
+    <!-- Disk cross-section - oscillating warp -->
+    <path d="M 50 300 Q 100 270 150 290 Q 200 310 250 280 Q 300 260 350 290 Q 400 310 450 275 Q 500 265 550 285" 
+          stroke="var(--ink)" stroke-width="1.8" fill="none" />
+    <path d="M 50 320 Q 100 290 150 310 Q 200 330 250 300 Q 300 280 350 310 Q 400 330 450 295 Q 500 285 550 305" 
+          stroke="var(--ink-light)" stroke-width="1" fill="none" stroke-dasharray="4,3" />
+    
+    <!-- Midplane -->
+    <path d="M 50 310 Q 100 280 150 300 Q 200 320 250 290 Q 300 270 350 300 Q 400 320 450 285 Q 500 275 550 295" 
+          stroke="var(--accent)" stroke-width="1.2" fill="none" />
+    
+    <!-- Wave crests -->
+    <path d="M 150 270 Q 160 255 170 270" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+    <path d="M 350 260 Q 360 245 370 260" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+    
+    <text x="250" y="245" font-size="9" fill="var(--ink-light)" font-style="italic" text-anchor="middle">осциляції кута нахилу (згинальні хвилі)</text>
+    
+    <defs>
+      <marker id="arrowSmall" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <polygon points="0 0, 6 2, 0 4" fill="var(--ink-light)" />
+      </marker>
+    </defs>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 2.</span>
+    порівняння двох режимів передачі викривлення в акреційних дисках. (a) дифузійний режим: в'язкість домінує, викривлення поширюється плавно, формуючи стабільний радіус бардіна-петтерсона. (b) хвильовий режим: низька в'язкість, викривлення поширюється у вигляді згинальних хвиль, спричиняючи осциляції кута нахилу диска.
+  </figcaption>
+</figure>
+
+<p>якщо ж диск є геометрично товстим (<span class="math">h/r ~ 1</span>), що типово трапляється під час над-еддінгтонівської акреції або в низькосвітних активних ядрах галактик з адвекційно-домінованими потоками, ефект локального вирівнювання бардіна-петтерсона не здатен реалізуватися повною мірою. натомість такий товстий диск, завдяки потужному акустичному зв'язку між шарами, здатен прецесувати як єдине тверде тіло (явище жорсткої прецесії, або solid-body precession). період такої глобальної прецесії залежить винятково від радіального профілю поверхневої густини, загального кутового моменту диска та інтегрованого гравітомагнітного крутного моменту <span class="citation" data-ref="ref_s11">[s_s11, s_b3]</span>. саме такий механізм жорсткої прецесії товстого диска блискуче пояснює стрімку прецесію струменів у рентгенівських подвійних системах, таких як v404 cygni, де зміна просторової орієнтації струменя фіксувалася на вражаючих масштабах хвилин та годин під час спалаху 2015 року <span class="citation" data-ref="ref_b3">[s_b3, s_s139, s_s154]</span>.</p>
+
+<!-- === FIGURE 3: Solid-Body Precession of Thick Disk === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 550 300" style="background: var(--paper);">
+    <!-- Thick torus / disk -->
+    <defs>
+      <radialGradient id="torusGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.12" />
+        <stop offset="40%" stop-color="var(--ink)" stop-opacity="0.08" />
+        <stop offset="100%" stop-color="var(--ink)" stop-opacity="0.02" />
+      </radialGradient>
+    </defs>
+    
+    <!-- Black hole -->
+    <circle cx="180" cy="150" r="30" fill="var(--ink)" opacity="0.9" />
+    <circle cx="180" cy="150" r="30" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+    
+    <!-- Thick disk (torus-like) -->
+    <ellipse cx="220" cy="155" rx="120" ry="50" fill="url(#torusGrad)" stroke="var(--ink)" stroke-width="1.5" transform="rotate(-20, 220, 155)" />
+    <ellipse cx="220" cy="155" rx="80" ry="30" fill="none" stroke="var(--ink-light)" stroke-width="0.8" stroke-dasharray="4,3" transform="rotate(-20, 220, 155)" />
+    <ellipse cx="220" cy="155" rx="50" ry="18" fill="none" stroke="var(--ink-light)" stroke-width="0.5" transform="rotate(-20, 220, 155)" />
+    
+    <!-- Inner edge (ISCO) -->
+    <circle cx="180" cy="150" r="45" fill="none" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="2,3" />
+    <text x="135" y="115" font-size="7" fill="var(--accent)">r_isco</text>
+    
+    <!-- Precession arrow (entire disk) -->
+    <path d="M 330 120 A 130 50 0 0 1 340 190" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#arrowBig)" />
+    <defs>
+      <marker id="arrowBig" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+        <polygon points="0 0, 10 4, 0 8" fill="var(--accent)" />
+      </marker>
+    </defs>
+    
+    <!-- Spin axis -->
+    <line x1="180" y1="120" x2="180" y2="50" stroke="var(--ink)" stroke-width="1.5" />
+    <polygon points="175,55 180,40 185,55" fill="var(--ink)" />
+    <text x="190" y="55" font-size="9" fill="var(--ink)" font-style="italic">спін чд</text>
+    
+    <!-- L_disk vector -->
+    <line x1="220" y1="155" x2="160" y2="70" stroke="var(--ink-light)" stroke-width="1.5" />
+    <polygon points="155,75 148,65 162,68" fill="var(--ink-light)" />
+    <text x="120" y="65" font-size="9" fill="var(--ink-light)" font-style="italic">L_disk</text>
+    
+    <!-- Jet -->
+    <line x1="180" y1="120" x2="130" y2="35" stroke="var(--accent)" stroke-width="2.5" />
+    <polygon points="125,40 118,28 132,33" fill="var(--accent)" />
+    <text x="90" y="30" font-size="9" fill="var(--accent)" font-style="italic">струмінь</text>
+    
+    <!-- Annotation -->
+    <text x="300" y="260" font-size="10" fill="var(--ink)">товстий диск (h/r ~ 1)</text>
+    <text x="300" y="276" font-size="9" fill="var(--ink-light)">прецесує як єдине тверде тіло</text>
+    
+    <!-- Equation box -->
+    <rect x="340" y="40" width="190" height="45" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.8" />
+    <text x="350" y="58" font-size="9" fill="var(--ink)" font-style="italic">P_prec ∝ M_disk / τ_LT</text>
+    <text x="350" y="75" font-size="8" fill="var(--ink-light)">τ_LT — інтегрований крутний момент</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 3.</span>
+    жорстка прецесія геометрично товстого акреційного диска. за умови h/r ~ 1 (над-еддінгтонівська акреція) потужний акустичний зв'язок між шарами змушує весь диск прецесувати як єдине ціле. період прецесії визначається повним кутовим моментом диска та інтегрованим гравітомагнітним крутним моментом. струмінь, вкорінений у внутрішніх областях, слідує за прецесією диска.
+  </figcaption>
+</figure>
+
+<p>останні надвисокороздільні загальнорелятивістські магнітогідродинамічні (grrhd) симуляції значно розширили і поглибили розуміння цього ефекту. тривимірне моделювання геометрично тонких нахилених дисків (<span class="math">h/r ~ 0.03</span>), здійснене за допомогою передових обчислювальних кодів, наочно продемонструвало, що внутрішня частина диска (до <span class="math">r ~ 5r_g</span>) дійсно слухняно вирівнюється з екватором чорної діри <span class="citation" data-ref="ref_b7">[s_b7, s_s148, s_s218]</span>. однак найбільш парадоксальним і несподіваним для наукової спільноти виявилося те, що релятивістські струмені, сформовані механізмом блендфорда-знаєка, орієнтуються не вздовж осі обертання чорної діри або вирівняної внутрішньої частини диска, як очікувалося раніше, а вздовж вектора кутового моменту зовнішнього нахиленого диска <span class="citation" data-ref="ref_b9">[s_b9, s_s218]</span>. це доводить, що зовнішні структури диска і навколишньої корони мають достатній магнітний і динамічний крутний момент, аби перенаправити і колімувати надзвичайно потужний плазмовий струмінь <span class="citation" data-ref="ref_b7">[s_b7]</span>.</p>
+
+<!-- === FIGURE 4: GRMHD Simulation Result === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 320" style="background: var(--paper);">
+    <!-- Schematic of simulation domain -->
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">результати grmhd симуляцій (h/r ≈ 0.03, a = 0.9375)</text>
+    
+    <!-- Black hole -->
+    <circle cx="120" cy="160" r="25" fill="var(--ink)" opacity="0.9" />
+    <circle cx="120" cy="160" r="25" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+    
+    <!-- Inner aligned region -->
+    <ellipse cx="170" cy="160" rx="45" ry="6" fill="var(--accent)" opacity="0.1" stroke="var(--accent)" stroke-width="1" />
+    <text x="140" y="148" font-size="8" fill="var(--accent)">внутр. вирівняна</text>
+    <text x="142" y="158" font-size="7" fill="var(--accent)">область (r &lt; 5 r_g)</text>
+    
+    <!-- Outer tilted region -->
+    <ellipse cx="280" cy="175" rx="100" ry="20" fill="none" stroke="var(--ink)" stroke-width="1.2" transform="rotate(-15, 280, 175)" />
+    <ellipse cx="280" cy="175" rx="65" ry="12" fill="none" stroke="var(--ink-light)" stroke-width="0.6" stroke-dasharray="3,3" transform="rotate(-15, 280, 175)" />
+    
+    <!-- Magnetic field lines -->
+    <path d="M 150 140 Q 200 120 250 130 Q 300 140 350 135" stroke="var(--ink-light)" stroke-width="0.8" fill="none" stroke-dasharray="2,3" />
+    <path d="M 160 180 Q 210 200 260 195 Q 310 190 360 195" stroke="var(--ink-light)" stroke-width="0.8" fill="none" stroke-dasharray="2,3" />
+    
+    <!-- Jet following outer disk -->
+    <line x1="120" y1="135" x2="70" y2="50" stroke="var(--accent)" stroke-width="2.5" />
+    <polygon points="65,55 58,42 72,47" fill="var(--accent)" />
+    <text x="30" y="45" font-size="9" fill="var(--accent)" font-style="italic">струмінь ∥ L_outer</text>
+    
+    <!-- NOT aligned with spin annotation -->
+    <line x1="120" y1="135" x2="120" y2="90" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4,3" />
+    <text x="125" y="95" font-size="8" fill="var(--ink-light)">вісь спіну чд</text>
+    
+    <!-- Angular momentum vectors -->
+    <line x1="280" y1="175" x2="230" y2="120" stroke="var(--ink)" stroke-width="1.5" />
+    <polygon points="225,125 218,115 232,118" fill="var(--ink)" />
+    <text x="185" y="115" font-size="9" fill="var(--ink)" font-weight="bold">L_outer</text>
+    
+    <!-- Key finding box -->
+    <rect x="370" y="60" width="210" height="85" fill="var(--paper)" stroke="var(--accent)" stroke-width="1" />
+    <text x="380" y="80" font-size="9" fill="var(--accent)" font-weight="bold">ключовий результат:</text>
+    <text x="380" y="97" font-size="9" fill="var(--ink)">струмінь блендфорда-знаєка</text>
+    <text x="380" y="113" font-size="9" fill="var(--ink)">орієнтується вздовж</text>
+    <text x="380" y="129" font-size="9" fill="var(--ink)">L_outer, а НЕ вздовж</text>
+    <text x="380" y="145" font-size="9" fill="var(--ink)">осі спіну чорної діри</text>
+    
+    <!-- Reference -->
+    <text x="380" y="165" font-size="7" fill="var(--ink-light)">Liska et al. (2018), MNRAS</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 4.</span>
+    схематичне узагальнення результатів загальнорелятивістських магнітогідродинамічних симуляцій нахилених акреційних дисків. внутрішня частина диска (r &lt; 5 r_g) вирівнюється з екватором чорної діри, проте релятивістський струмінь, що генерується механізмом блендфорда-знаєка, колімується вздовж вектора кутового моменту зовнішнього, нахиленого диска. це свідчить про домінуючий вплив магнітних полів зовнішніх областей на напрямок викиду.
+  </figcaption>
+</figure>
+
+<p>варто також детально застановитися над феноменом розриву акреційного диска (disk tearing). якщо релятивістські моменти лензе-тіррінга значно перевищують в'язкі сили, що утримують диск цілісним (що часто трапляється при великих кутах початкового нахилу понад кілька градусів), плазма виявляється не здатною підтримувати плавний перехідний радіус. гідродинамічні симуляції методом згладжених частинок (sph) та сучасні магнітогідродинамічні розвідки доводять, що за таких умов диск неминуче розривається на окремі ізольовані кільця <span class="citation" data-ref="ref_s44">[s_s44, s_s243, s_s298]</span>. ці розірвані кільця газу починають прецесувати незалежно одне від одного з різними частотами і згодом акреціюють на чорну діру окремими, нерегулярними порціями <span class="citation" data-ref="ref_s44">[s_s44, s_s298]</span>. цей руйнівний процес не лише критично пригнічує ефективне вирівнювання осі чорної діри з диском, але й супроводжується значними хаотичними флуктуаціями темпу акреції. ці флуктуації безпосередньо спостерігаються в рентгенівських подвійних системах як квазіперіодичні осциляції (qpo) низької та високої частоти, надаючи ще один метод емпіричної перевірки загальної теорії відносності <span class="citation" data-ref="ref_s42">[s_s42, s_s71, s_s84]</span>.</p>
+
+<!-- === FIGURE 5: Disk Tearing Schematic === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 280" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">розрив акреційного диска (disk tearing) при великому куті нахилу</text>
+    
+    <!-- Black hole -->
+    <circle cx="80" cy="150" r="28" fill="var(--ink)" opacity="0.9" />
+    <circle cx="80" cy="150" r="28" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+    
+    <!-- Spin axis -->
+    <line x1="80" y1="122" x2="80" y2="60" stroke="var(--accent)" stroke-width="1.5" />
+    <polygon points="75,65 80,50 85,65" fill="var(--accent)" />
+    
+    <!-- Torn rings -->
+    <!-- Ring 1 (innermost) -->
+    <ellipse cx="130" cy="148" rx="40" ry="8" fill="none" stroke="var(--ink)" stroke-width="1.5" transform="rotate(-5, 130, 148)" />
+    <text x="110" y="130" font-size="7" fill="var(--ink)">кільце 1</text>
+    
+    <!-- Ring 2 -->
+    <ellipse cx="200" cy="160" rx="55" ry="14" fill="none" stroke="var(--ink)" stroke-width="1.5" transform="rotate(-25, 200, 160)" />
+    <text x="185" y="135" font-size="7" fill="var(--ink)">кільце 2</text>
+    
+    <!-- Ring 3 -->
+    <ellipse cx="290" cy="180" rx="70" ry="18" fill="none" stroke="var(--ink)" stroke-width="1.5" transform="rotate(-40, 290, 180)" />
+    <text x="275" y="150" font-size="7" fill="var(--ink)">кільце 3</text>
+    
+    <!-- Ring 4 (outermost) -->
+    <ellipse cx="400" cy="200" rx="85" ry="22" fill="none" stroke="var(--ink)" stroke-width="1.5" transform="rotate(-55, 400, 200)" />
+    <text x="385" y="170" font-size="7" fill="var(--ink)">кільце 4</text>
+    
+    <!-- Tear gaps -->
+    <path d="M 155 140 L 165 155" stroke="var(--accent)" stroke-width="1.5" />
+    <path d="M 155 156 L 165 170" stroke="var(--accent)" stroke-width="1.5" />
+    
+    <path d="M 240 155 L 250 175" stroke="var(--accent)" stroke-width="1.5" />
+    <path d="M 240 170 L 250 190" stroke="var(--accent)" stroke-width="1.5" />
+    
+    <path d="M 340 175 L 350 195" stroke="var(--accent)" stroke-width="1.5" />
+    <path d="M 340 190 L 350 210" stroke="var(--accent)" stroke-width="1.5" />
+    
+    <!-- Precession arrows on different rings -->
+    <path d="M 150 135 A 35 6 0 0 1 160 145" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowTiny)" />
+    <path d="M 240 148 A 50 12 0 0 1 255 165" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowTiny)" />
+    <path d="M 350 165 A 65 16 0 0 1 365 185" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowTiny)" />
+    
+    <defs>
+      <marker id="arrowTiny" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto">
+        <polygon points="0 0, 5 2, 0 4" fill="var(--ink-light)" />
+      </marker>
+    </defs>
+    
+    <!-- QPO annotation -->
+    <rect x="30" y="220" width="540" height="45" fill="var(--accent)" opacity="0.06" stroke="var(--rule)" stroke-width="0.5" />
+    <text x="300" y="238" font-size="9" fill="var(--ink)" text-anchor="middle">незалежна прецесія кілець → нерегулярна акреція → квазіперіодичні осциляції (qpo) в рентгенівському діапазоні</text>
+    <text x="300" y="255" font-size="8" fill="var(--ink-light)" text-anchor="middle">спостерігається в системах з великим кутом неспівпадіння (β > 10°–15°)</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 5.</span>
+    явище розриву акреційного диска. при великих кутах початкового нахилу (β > 10°) крутний момент лензе-тіррінга перевищує в'язкі сили, і диск розривається на окремі, ізольовані кільця. кожне кільце прецесує з власною частотою, що призводить до хаотичних флуктуацій темпу акреції та спостережуваних квазіперіодичних осциляцій (qpo).
+  </figcaption>
+</figure>
+
+<div class="page-navigation">
+  <a href="index.html" class="prev">← вступ</a>
+  <a href="glossary.html" class="glossary-link">[ глосарій ]</a>
+  <a href="paradigm.html" class="next">парадигма →</a>
+</div>
+
+<!-- === FOOTER METADATA === -->
+<div class="footer-meta">
+  <span>прецесія релятивістських джетів — preprint v1.0 // секція: динаміка дисків</span>
+  <span>сторінка 4–6</span>
+</div>
+
+<!-- === HIDDEN REFERENCES === -->
+<div style="display: none;">
+  <span id="ref_s10">s_s10: Bardeen J.M., Petterson J.A. (1975), ApJ, 195, L65</span>
+  <span id="ref_s299">s_s299: Papaloizou J.C.B., Pringle J.E. (1983), MNRAS, 202, 1181</span>
+  <span id="ref_b7">s_b7: Liska M. et al. (2018), MNRAS, 474, L81</span>
+  <span id="ref_b9">s_b9: Liska M. et al. (2021), ApJ, 910, 113</span>
+  <span id="ref_s150">s_s150: Nelson R.P., Papaloizou J.C.B. (2000), MNRAS, 315, 570</span>
+  <span id="ref_s45">s_s45: King A.R. et al. (2005), MNRAS, 363, 49</span>
+  <span id="ref_s148">s_s148: Nealon R., Price D.J., Nixon C.J. (2015), MNRAS, 448, 1526</span>
+  <span id="ref_s69">s_s69: Lubow S.H., Ogilvie G.I. (2000), ApJ, 538, 326</span>
+  <span id="ref_s151">s_s151: Ogilvie G.I. (1999), MNRAS, 304, 557</span>
+  <span id="ref_s240">s_s240: Torkelsson U. et al. (2000), MNRAS, 318, 47</span>
+  <span id="ref_s241">s_s241: Tremaine S., Davis S.W. (2014), MNRAS, 441, 1408</span>
+  <span id="ref_s11">s_s11: Fragile P.C. et al. (2007), ApJ, 668, 417</span>
+  <span id="ref_b3">s_b3: Miller-Jones J.C.A. et al. (2019), Nature, 569, 374</span>
+  <span id="ref_s139">s_s139: Miller-Jones J.C.A. et al. (2015), MNRAS, 453, 3918</span>
+  <span id="ref_s154">s_s154: Poutanen J. et al. (2022), Science, 375, 874</span>
+  <span id="ref_s218">s_s218: Liska M. et al. (2023), ApJ, 935, 70</span>
+  <span id="ref_s44">s_s44: Nixon C.J. et al. (2012), MNRAS, 422, 2547</span>
+  <span id="ref_s243">s_s243: Dogan S. et al. (2015), MNRAS, 449, 1251</span>
+  <span id="ref_s298">s_s298: Raj A., Nixon C.J., Dogan S. (2021), MNRAS, 505, 5421</span>
+  <span id="ref_s42">s_s42: Ingram A., Motta S.E. (2019), NewAR, 85, 101524</span>
+  <span id="ref_s71">s_s71: Motta S.E. et al. (2015), MNRAS, 447, 2059</span>
+  <span id="ref_s84">s_s84: Stella L., Vietri M. (1998), ApJ, 492, L59</span>
+</div>
+
+<script src="global.js"></script>
+</body>
+</html>

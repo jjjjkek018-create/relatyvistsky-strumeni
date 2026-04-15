@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>прецесія релятивістських джетів — астрофізичний preprint</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- === PREPRINT HEADER (arXiv Strip) === -->
+<div class="preprint-header">
+  <span class="left">astro-ph.HE // draft version april 2026</span>
+  <span class="right">precession of relativistic jets: a kinematic review</span>
+</div>
+
+<!-- === TITLE SECTION === -->
+<h1>вичерпна розвідка щодо фізичної природи, механізмів та спостережних проявів прецесії релятивістських струменів в астрофізичних об'єктах</h1>
+
+<!-- === ABSTRACT === -->
+<div class="abstract">
+  <p><strong>abstract</strong> дослідження релятивістських струменів (джетів) становить один із найскладніших напрямів сучасної астрофізики високих енергій. у цій розвідці розглядаються механізми формування, гравітомагнітні ефекти (лензе-тіррінга) та спостережні прояви прецесії. окрема увага приділяється масштабній інваріантності процесів від мікроквазарів до надмасивних чорних дір.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: ВСТУПНІ МІРКУВАННЯ ТА ЗАГАЛЬНИЙ ОГЛЯД ПРОБЛЕМАТИКИ -->
+<!-- ============================================================ -->
+
+<h2>вступні міркування та загальний огляд проблематики</h2>
+
+<p>дослідження релятивістських струменів, що їх у сучасній науковій літературі також позначають терміном «джети», становить один із найскладніших і водночас найважливіших напрямів сучасної астрофізики високих енергій. ці структури являють собою висококолімовані потоки плазми, які рухаються зі швидкостями, що наближаються до швидкості світла, і викидаються з центральних областей навколо компактних масивних об'єктів, таких як чорні діри або нейтронні зорі <span class="citation" data-ref="ref_s15">[s_s15, s_s38, s_b1]</span>. від самого моменту їхнього відкриття в радіодіапазоні (як-от у лінзоподібній галактиці центавр а або в еліптичній галактиці m87) стало зрозуміло, що вони є продуктом надмасивних енергетичних процесів, проте детальна фізика їхнього виникнення і досі залишається предметом інтенсивних наукових дискусій <span class="citation" data-ref="ref_s15">[s_s15, s_s56]</span>.</p>
+
+<p>механізми формування струменів традиційно пояснюються за допомогою магнітогідродинамічних процесів, що розгортаються в безпосередній близькості до горизонту подій. зокрема, класична теоретична модель, відома як механізм перюуза та механізм блендфорда-знаєка, описує вилучення обертальної енергії ергосфери керрівської чорної діри через потужні магнітні поля, які взаємодіють з акреційною плазмою <span class="citation" data-ref="ref_s15">[s_s15, s_s31]</span>. альтернативна, але часто доповнююча концепція — механізм блендфорда-пейна — базується на магнітовідцентровому прискоренні заряджених частинок безпосередньо з поверхні внутрішніх частин акреційного диска, що призводить до створення вузькоспрямованих потоків <span class="citation" data-ref="ref_b2">[s_s15, s_b2]</span>.</p>
+
+<p>попри значний прогрес у розумінні природи виникнення струменів, просторова орієнтація цих колосальних викидів не є незмінною. багаторічні інтерферометричні спостереження високої роздільної здатності неспростовно доводять, що осі викиду струменів зазнають періодичних або квазіперіодичних змін у просторі — явище, яке в астрофізиці отримало назву прецесії релятивістських струменів <span class="citation" data-ref="ref_s23">[s_s23, s_s134]</span>. ця кінематична особливість виявляється у надзвичайно широкому спектрі просторових і часових масштабів: від мікроквазарів у межах нашої галактики чумацький шлях, де періоди прецесії вимірюються роками чи навіть днями, до надмасивних чорних дір в активних ядрах галактик (аяг), чиї струмені простягаються на мегапарсеки у міжгалактичне середовище і прецесують мільйони років <span class="citation" data-ref="ref_s38">[s_s38, s_s60, s_b4]</span>.</p>
+
+<!-- === FIGURE 1: Schematic of Precessing Jet Geometry === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 380" style="background: var(--paper); font-family: 'Computer Modern Sans', sans-serif;">
+    <!-- Precession cone (dashed) -->
+    <path d="M 300 60 L 160 300" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="6,4" fill="none" />
+    <path d="M 300 60 L 440 300" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="6,4" fill="none" />
+    <ellipse cx="300" cy="300" rx="140" ry="30" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="6,4" fill="none" />
+    
+    <!-- Central black hole / accretion disk -->
+    <ellipse cx="300" cy="300" rx="60" ry="15" stroke="var(--ink)" stroke-width="1.2" fill="none" />
+    <ellipse cx="300" cy="300" rx="30" ry="7" stroke="var(--ink)" stroke-width="0.8" fill="var(--ink)" opacity="0.15" />
+    <circle cx="300" cy="300" r="6" fill="var(--accent)" />
+    
+    <!-- Jet axis (current) -->
+    <line x1="300" y1="300" x2="230" y2="100" stroke="var(--accent)" stroke-width="2.5" />
+    <line x1="300" y1="300" x2="370" y2="500" stroke="var(--accent)" stroke-width="2.5" opacity="0.5" stroke-dasharray="4,3" />
+    
+    <!-- Jet axis (previous epoch) -->
+    <line x1="300" y1="300" x2="400" y2="120" stroke="var(--ink-light)" stroke-width="1.2" opacity="0.5" />
+    
+    <!-- Precession angle θ -->
+    <path d="M 300 260 A 40 40 0 0 1 340 260" stroke="var(--ink)" stroke-width="0.8" fill="none" />
+    <text x="328" y="252" font-size="11" fill="var(--ink)">θ</text>
+    
+    <!-- Labels -->
+    <text x="210" y="85" font-size="10" fill="var(--ink)" font-style="italic">релятивістський</text>
+    <text x="215" y="97" font-size="10" fill="var(--ink)" font-style="italic">струмінь</text>
+    
+    <text x="355" y="110" font-size="9" fill="var(--ink-light)" font-style="italic">попередня</text>
+    <text x="358" y="122" font-size="9" fill="var(--ink-light)" font-style="italic">вісь</text>
+    
+    <text x="430" y="310" font-size="9" fill="var(--ink-light)" font-style="italic">прецесійний</text>
+    <text x="433" y="322" font-size="9" fill="var(--ink-light)" font-style="italic">конус</text>
+    
+    <text x="240" y="325" font-size="10" fill="var(--ink)">акреційний диск</text>
+    
+    <text x="280" y="345" font-size="9" fill="var(--accent)">чорна діра</text>
+    
+    <!-- Observer line of sight -->
+    <line x1="80" y1="50" x2="200" y2="200" stroke="var(--ink-light)" stroke-width="0.6" stroke-dasharray="2,4" />
+    <text x="30" y="45" font-size="8" fill="var(--ink-light)" transform="rotate(-45, 80, 50)">промінь зору</text>
+    <text x="35" y="57" font-size="8" fill="var(--ink-light)" transform="rotate(-45, 80, 50)">спостерігача</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 1.</span> 
+    схематичне зображення прецесуючого релятивістського струменя. вісь викиду описує конус із кутом напіврозхилу θ навколо осі обертання акреційного диска / чорної діри. спостережувана яскравість модулюється доплерівським підсиленням залежно від орієнтації струменя відносно променя зору.
+  </figcaption>
+</figure>
+
+<p>вивчення феномену прецесії надає дослідникам унікальний математичний та спостережний інструментарій для дослідження фундаментальної фізики акреції, перевірки нелінійних передбачень загальної теорії відносності та аналізу динаміки подвійних систем надмасивних чорних дір, просторове розділення яких є наразі недоступним для прямих оптичних чи радіоінтерферометричних методів <span class="citation" data-ref="ref_s10">[s_s10, s_s24]</span>. позаяк струмені слугують своєрідними вказівниками на орієнтацію центрального джерела, їхнє викривлення чи зміщення зберігає історичний запис про еволюцію кутового моменту всієї системи <span class="citation" data-ref="ref_s267">[s_s267, s_s340]</span>.</p>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: ТЕОРЕТИЧНЕ ПІДҐРУНТЯ ГРАВІТОМАГНІТНИХ ЯВИЩ -->
+<!-- ============================================================ -->
+
+<h2>теоретичне підґрунтя гравітомагнітних явищ та ефект лензе-тіррінга</h2>
+
+<p>зміна напрямку осі релятивістського струменя вимагає наявності потужних зовнішніх крутних моментів, що діють на систему, утворену чорною дірою та її акреційним диском. у сучасній теоретичній астрофізиці виокремлюють два основоположні класи механізмів, здатних генерувати такі колосальні моменти: гравітомагнітні ефекти, зумовлені швидким обертанням одиничної чорної діри, та гравітаційна припливна взаємодія у подвійних системах <span class="citation" data-ref="ref_s83">[s_s83, s_b4]</span>.</p>
+
+<p>базовим релятивістським механізмом, що призводить до прецесії акреційного диска і, як прямий наслідок, самого струменя, є ефект захоплення інерційних систем відліку, ширше відомий у фаховій літературі як ефект лензе-тіррінга. цей феномен був аналітично передбачений у 1918 році австрійськими фізиками йозефом лензе та гансом тіррінгом як логічний наслідок загальної теорії відносності альберта айнштайна <span class="citation" data-ref="ref_s83">[s_s83, s_s137, s_s275]</span>. згідно з їхніми розрахунками, будь-який стаціонарний розподіл маси-енергії, що обертається, неминуче викривлює метрику простору-часу таким чином, що змушує сусідні пробні частинки та їхні орбіти прецесувати навколо осі обертання центрального тіла <span class="citation" data-ref="ref_s83">[s_s83, s_s275]</span>. цей аспект теорії тяжіння часто називають гравітомагнетизмом через його математичну спорідненість із законами класичної електродинаміки максвелла <span class="citation" data-ref="ref_s137">[s_s137]</span>.</p>
+
+<p>у контексті астрофізики чорних дір цей надзвичайно тонкий ефект набуває воістину макроскопічних масштабів. речовина, що надходить до околиць чорної діри (наприклад, від зорі-компаньйона у рентгенівських подвійних системах або внаслідок припливного руйнування зорі), формує акреційний диск, початкова орбітальна площина якого, як правило, не збігається з екваторіальною площиною керрівської (обертової) чорної діри <span class="citation" data-ref="ref_b3">[s_b3, s_s11]</span>. кут нахилу між вектором кутового моменту диска та вектором спіну чорної діри генерує стійкий гравітомагнітний крутний момент.</p>
+
+<!-- === EQUATION: Lense-Thirring Precession Frequency === -->
+<div class="equation">
+  ω<span style="font-size:0.7rem; vertical-align:sub;">LT</span> ≈ 
+  <span style="font-size:1.4rem; margin:0 2px;">(</span>
+  2G J / c² r³
+  <span style="font-size:1.4rem; margin:0 2px;">)</span>
+  <span class="equation-number">(1)</span>
+</div>
+
+<p>частота прецесії лензе-тіррінга (позначимо її як ω<span style="font-size:0.7rem; vertical-align:sub;">LT</span>) для пробної частинки на круговій орбіті має виразну радіальну залежність і наближено описується формулою, де <span class="math">J</span> — кутовий момент чорної діри, <span class="math">G</span> — гравітаційна стала, <span class="math">c</span> — швидкість світла у вакуумі, а <span class="math">r</span> — радіальна відстань від сингулярності <span class="citation" data-ref="ref_s43">[s_s43]</span>. оскільки крутний момент обернено пропорційний кубу радіуса, внутрішні шари акреційного диска зазнають набагато сильнішого впливу, ніж його зовнішні окраїни, що створює потужні напруження всередині потоку речовини.</p>
+
+<!-- === FIGURE 2: Lense-Thirring Effect Diagram === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 320" style="background: var(--paper);">
+    <!-- Frame dragging visualization -->
+    <defs>
+      <radialGradient id="bhGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="var(--ink)" stop-opacity="0.8" />
+        <stop offset="60%" stop-color="var(--ink)" stop-opacity="0.3" />
+        <stop offset="100%" stop-color="var(--ink)" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+    
+    <!-- Black hole sphere -->
+    <circle cx="300" cy="180" r="45" fill="url(#bhGrad)" />
+    <circle cx="300" cy="180" r="45" fill="none" stroke="var(--ink)" stroke-width="1" />
+    
+    <!-- Spin axis arrow -->
+    <line x1="300" y1="135" x2="300" y2="60" stroke="var(--accent)" stroke-width="2" />
+    <polygon points="295,65 300,50 305,65" fill="var(--accent)" />
+    <text x="310" y="65" font-size="10" fill="var(--accent)" font-style="italic">спін (J)</text>
+    
+    <!-- Accretion disk (tilted) -->
+    <ellipse cx="300" cy="180" rx="110" ry="25" stroke="var(--ink)" stroke-width="1.2" fill="none" transform="rotate(-15, 300, 180)" />
+    <ellipse cx="300" cy="180" rx="70" ry="15" stroke="var(--ink-light)" stroke-width="0.6" fill="none" transform="rotate(-15, 300, 180)" stroke-dasharray="3,3" />
+    
+    <!-- Disk angular momentum vector -->
+    <line x1="300" y1="180" x2="210" y2="100" stroke="var(--ink-light)" stroke-width="1.5" />
+    <polygon points="205,105 195,95 212,97" fill="var(--ink-light)" />
+    <text x="160" y="90" font-size="10" fill="var(--ink-light)" font-style="italic">L_disk</text>
+    
+    <!-- Frame dragging swirl lines -->
+    <path d="M 200 150 Q 220 130 250 145 Q 280 160 300 155" stroke="var(--rule)" stroke-width="0.8" fill="none" stroke-dasharray="2,3" />
+    <path d="M 380 200 Q 360 220 330 210 Q 300 200 290 210" stroke="var(--rule)" stroke-width="0.8" fill="none" stroke-dasharray="2,3" />
+    <path d="M 220 220 Q 250 235 280 220 Q 310 205 320 215" stroke="var(--rule)" stroke-width="0.8" fill="none" stroke-dasharray="2,3" />
+    
+    <!-- Precession arrow on disk -->
+    <path d="M 370 155 A 100 25 0 0 1 380 190" stroke="var(--accent)" stroke-width="1.2" fill="none" marker-end="url(#arrowhead)" />
+    <defs>
+      <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--accent)" />
+      </marker>
+    </defs>
+    <text x="400" y="170" font-size="9" fill="var(--accent)" font-style="italic">прецесія</text>
+    
+    <!-- Labels -->
+    <text x="200" y="260" font-size="10" fill="var(--ink)">нахилений акреційний диск</text>
+    <text x="340" y="250" font-size="9" fill="var(--ink-light)">гравітомагнітне</text>
+    <text x="345" y="262" font-size="9" fill="var(--ink-light)">захоплення</text>
+    
+    <!-- Misalignment angle -->
+    <path d="M 300 145 A 30 30 0 0 0 275 160" stroke="var(--ink)" stroke-width="0.7" fill="none" />
+    <text x="272" y="148" font-size="9" fill="var(--ink)">β</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 2.</span>
+    ілюстрація ефекту лензе-тіррінга (гравітомагнітного захоплення). обертова чорна діра (спін <span class="math">J</span>) викривлює простір-час навколо себе, змушуючи нахилений акреційний диск (кутовий момент <span class="math">L_disk</span>) прецесувати навколо осі спіну. кут неспівпадіння β генерує крутний момент, що призводить до прецесії релятивістських струменів, вкорінених у внутрішніх областях диска.
+  </figcaption>
+</figure>
+
+<p>до слова, цей ефект не є суто теоретичним конструктом; його було емпірично підтверджено 16 квітня 2020 року інститутом макса планка шляхом високоточного астрометричного моніторингу прецесії орбіт зір, що обертаються навколо надмасивної чорної діри стрілець а* у центрі нашої галактики <span class="citation" data-ref="ref_s1">[s_s1, s_s17]</span>.</p>
+
+<p>науковцям важливо неухильно відрізняти ефект лензе-тіррінга від так званої геодезичної прецесії (прецесії де сіттера), яка виникає винятково через наявність викривлення простору-часу центральною масою, незалежно від стану її обертання <span class="citation" data-ref="ref_s380">[s_s380, s_s381]</span>. у реальних астрофізичних умовах прецесія струменів, зумовлена ефектом лензе-тіррінга, відбувається на часових масштабах, що значно краще узгоджуються зі спостережними даними для швидкозмінних об'єктів, тоді як геодезична прецесія спіну самої чорної діри є процесом занадто повільним (часто з періодами порядку мільйонів років для подвійних систем), щоб самостійно пояснити стрімкі варіації кривих блиску <span class="citation" data-ref="ref_s383">[s_s383]</span>.</p>
+
+<!-- === SCHEME: Radial Dependence of LT Precession === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 550 280" style="background: var(--paper);">
+    <!-- Axes -->
+    <line x1="70" y1="30" x2="70" y2="240" stroke="var(--ink)" stroke-width="1" />
+    <line x1="70" y1="240" x2="520" y2="240" stroke="var(--ink)" stroke-width="1" />
+    
+    <!-- Y-axis label -->
+    <text x="20" y="140" font-size="10" fill="var(--ink)" transform="rotate(-90, 20, 140)" text-anchor="middle">частота прецесії ω ∝ r⁻³</text>
+    
+    <!-- X-axis label -->
+    <text x="300" y="265" font-size="10" fill="var(--ink)" text-anchor="middle">радіальна відстань r (в од. гравітаційного радіуса r_g)</text>
+    
+    <!-- Curve: 1/r³ falloff -->
+    <path d="M 70 240 Q 120 220 180 150 Q 240 80 300 60 Q 380 48 500 42" 
+          stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    
+    <!-- Annotated regions -->
+    <!-- Inner disk region -->
+    <rect x="90" y="50" width="100" height="25" fill="var(--accent)" opacity="0.08" />
+    <line x1="140" y1="75" x2="140" y2="240" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.5" />
+    <text x="100" y="45" font-size="9" fill="var(--accent)" font-style="italic">внутрішній диск</text>
+    <text x="105" y="57" font-size="8" fill="var(--accent)">(r ≈ 3–10 r_g)</text>
+    
+    <!-- Outer disk region -->
+    <rect x="300" y="50" width="120" height="25" fill="var(--ink-light)" opacity="0.06" />
+    <line x1="360" y1="75" x2="360" y2="240" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.4" />
+    <text x="310" y="45" font-size="9" fill="var(--ink-light)" font-style="italic">зовнішній диск</text>
+    <text x="315" y="57" font-size="8" fill="var(--ink-light)">(r > 100 r_g)</text>
+    
+    <!-- Points for reference objects -->
+    <circle cx="170" cy="135" r="4" fill="var(--ink)" />
+    <text x="178" y="130" font-size="8" fill="var(--ink)">v404 cyg</text>
+    <text x="180" y="142" font-size="7" fill="var(--ink-light)">(хв-години)</text>
+    
+    <circle cx="380" cy="52" r="3.5" fill="var(--ink)" />
+    <text x="388" y="48" font-size="8" fill="var(--ink)">ss 433</text>
+    <text x="390" y="60" font-size="7" fill="var(--ink-light)">(~162 діб)</text>
+    
+    <!-- Arrow showing strong/weak effect -->
+    <path d="M 120 210 L 120 100" stroke="var(--ink)" stroke-width="0.8" marker-end="url(#arrowUp)" />
+    <path d="M 360 210 L 360 100" stroke="var(--ink)" stroke-width="0.8" marker-end="url(#arrowUp)" />
+    <defs>
+      <marker id="arrowUp" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <polygon points="0 6, 3 0, 6 6" fill="var(--ink)" />
+      </marker>
+    </defs>
+    <text x="95" y="215" font-size="8" fill="var(--ink)" font-style="italic">сильний вплив</text>
+    <text x="345" y="215" font-size="8" fill="var(--ink)" font-style="italic">слабкий вплив</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 3.</span>
+    радіальна залежність частоти прецесії лензе-тіррінга (ω ∝ r⁻³). внутрішні шари акреційного диска зазнають значно швидшої прецесії, ніж зовнішні, що створює диференційне обертання та напруження в диску. наведено характерні масштаби для об'єктів v404 cygni та ss 433.
+  </figcaption>
+</figure>
+
+<div class="page-navigation">
+  <a href="citations.html" class="prev">⮌ цитування</a>
+  <a href="glossary.html" class="glossary-link">[ глосарій ]</a>
+  <a href="dynamics.html" class="next">динаміка дисків →</a>
+</div>
+
+<!-- === FOOTER METADATA === -->
+<div class="footer-meta">
+  <span>прецесія релятивістських джетів — preprint v1.0</span>
+  <span>сторінка 1–3</span>
+</div>
+
+<!-- === HIDDEN REFERENCES (For citation tooltips) === -->
+<div style="display: none;">
+  <span id="ref_s15">s_s15: Blandford R.D., Znajek R.L. (1977), MNRAS, 179, 433</span>
+  <span id="ref_s38">s_s38: Mirabel I.F., Rodríguez L.F. (1994), Nature, 371, 46</span>
+  <span id="ref_b1">s_b1: Begelman M.C., Blandford R.D., Rees M.J. (1984), Rev. Mod. Phys., 56, 255</span>
+  <span id="ref_s56">s_s56: Curtis H.D. (1918), Publ. Lick Obs., 13, 31</span>
+  <span id="ref_s31">s_s31: Penrose R. (1969), Riv. Nuovo Cim., 1, 252</span>
+  <span id="ref_b2">s_b2: Britzen S. et al. (2018), MNRAS, 478, 3199</span>
+  <span id="ref_s23">s_s23: Caproni A., Abraham Z., Monteiro H. (2013), MNRAS, 428, 280</span>
+  <span id="ref_s134">s_s134: Stirling A. et al. (2003), MNRAS, 341, 405</span>
+  <span id="ref_s60">s_s60: Gower A.C. et al. (1982), ApJ, 262, 478</span>
+  <span id="ref_b4">s_b4: Horton M.A. et al. (2020), MNRAS, 499, 2341</span>
+  <span id="ref_s10">s_s10: Bardeen J.M., Petterson J.A. (1975), ApJ, 195, L65</span>
+  <span id="ref_s24">s_s24: Britzen S. et al. (2023), A&A, 670, A108</span>
+  <span id="ref_s267">s_s267: Scheuer P.A.G. (1974), MNRAS, 166, 513</span>
+  <span id="ref_s340">s_s340: Vlahakis N., Königl A. (2004), ApJ, 605, 656</span>
+  <span id="ref_s83">s_s83: Lense J., Thirring H. (1918), Phys. Z., 19, 156</span>
+  <span id="ref_s137">s_s137: Mashhoon B. (2007), in 'The Measurement of Gravitomagnetism', Springer</span>
+  <span id="ref_s275">s_s275: Thirring H. (1918), Phys. Z., 19, 33</span>
+  <span id="ref_b3">s_b3: Miller-Jones J.C.A. et al. (2019), Nature, 569, 374</span>
+  <span id="ref_s11">s_s11: Fragile P.C. et al. (2007), ApJ, 668, 417</span>
+  <span id="ref_s43">s_s43: Kato S. (1990), PASJ, 42, 99</span>
+  <span id="ref_s1">s_s1: GRAVITY Collaboration (2020), A&A, 636, L5</span>
+  <span id="ref_s17">s_s17: Genzel R. et al. (2010), Rev. Mod. Phys., 82, 3121</span>
+  <span id="ref_s380">s_s380: de Sitter W. (1916), MNRAS, 77, 155</span>
+  <span id="ref_s381">s_s381: Barker B.M., O'Connell R.F. (1975), Phys. Rev. D, 12, 329</span>
+  <span id="ref_s383">s_s383: Merritt D. (2013), 'Dynamics and Evolution of Galactic Nuclei', Princeton</span>
+</div>
+
+<script src="global.js"></script>
+</body>
+</html>

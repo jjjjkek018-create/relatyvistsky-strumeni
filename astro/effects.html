@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>макроскопічні наслідки — s-подібні радіогалактики та кінетичний зворотний зв'язок</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- === PREPRINT HEADER (arXiv Strip) === -->
+<div class="preprint-header">
+  <span class="left">astro-ph.HE // draft version april 2026</span>
+  <span class="right">precession of relativistic jets: macroscopic effects</span>
+</div>
+
+<!-- === TITLE SECTION === -->
+<h1>макроскопічні наслідки: s-подібні радіогалактики та кінетичний зворотний зв'язок</h1>
+
+<!-- === ABSTRACT === -->
+<div class="abstract">
+  <p><strong>abstract</strong> розглядаються великомасштабні наслідки прецесії релятивістських струменів: формування s-подібних радіогалактик (pks 2300-18, 4c 29.47), вплив на міжгалактичне середовище та роль у розв'язанні проблеми потоків охолодження через кінетичний зворотний зв'язок. обговорюються результати гідродинамічних симуляцій (simba) та оптимальні параметри для ізотропного розігріву внутрішньоскупчувального газу.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: S-ПОДІБНІ РАДІОГАЛАКТИКИ -->
+<!-- ============================================================ -->
+
+<h2>макроскопічні наслідки: s-подібні радіогалактики та вплив на еволюцію скупчень</h2>
+
+<p>на ще більших, мегапарсекових масштабах прецесія релятивістських струменів перестає бути лише цікавим феноменом кінематики центрального двигуна і перетворюється на ключовий чинник, що формує вигляд цілих галактик. струмені залишають велетенські відбитки у міжгалактичному середовищі, формуючи об'єкти з характерною s-подібною (або z-подібною) морфологією радіовипромінювання, що відомі як s-подібні радіогалактики <span class="citation" data-ref="ref_s37">[s_s37, s_s55, s_s60, s_b4]</span>.</p>
+
+<p>така незвична інверсійно-симетрична форма виникає через те, що струмінь постійно і повільно змінює свій напрямок, наче струмінь води зі шланга, яким обертають. старіша плазма, викинута мільйони років тому, залишається на більших відстанях під кутами, що суттєво відрізняються від напрямку поточної, свіжої інжекції <span class="citation" data-ref="ref_b4">[s_b4, s_s222]</span>.</p>
+
+<!-- === FIGURE 1: S-Shaped Radio Galaxy Morphology === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 650 360" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">формування s-подібної радіогалактики внаслідок прецесії струменя</text>
+    
+    <!-- Central galaxy / AGN -->
+    <ellipse cx="325" cy="200" rx="20" ry="12" fill="var(--ink)" opacity="0.15" stroke="var(--ink)" stroke-width="1" />
+    <circle cx="325" cy="200" r="6" fill="var(--accent)" />
+    <text x="325" y="190" font-size="8" fill="var(--ink)" text-anchor="middle">ядро</text>
+    
+    <!-- Precession cone (small, at center) -->
+    <path d="M 325 194 L 290 160" stroke="var(--rule)" stroke-width="0.6" stroke-dasharray="3,3" />
+    <path d="M 325 194 L 360 160" stroke="var(--rule)" stroke-width="0.6" stroke-dasharray="3,3" />
+    
+    <!-- Current jet direction -->
+    <line x1="325" y1="194" x2="300" y2="150" stroke="var(--accent)" stroke-width="2" />
+    <polygon points="295,155 292,143 302,148" fill="var(--accent)" />
+    
+    <!-- North lobe (S-shape upper) -->
+    <path d="M 325 200 
+             Q 310 180 300 160 
+             Q 280 120 250 100 
+             Q 220 80 200 90 
+             Q 180 100 170 120" 
+          stroke="var(--ink)" stroke-width="2" fill="none" />
+    
+    <!-- Radio lobe north -->
+    <ellipse cx="165" cy="125" rx="25" ry="15" fill="var(--accent)" opacity="0.12" stroke="var(--accent)" stroke-width="1" transform="rotate(-20, 165, 125)" />
+    <text x="145" y="115" font-size="8" fill="var(--accent)" font-style="italic">північна частка</text>
+    
+    <!-- South lobe (S-shape lower) -->
+    <path d="M 325 200 
+             Q 340 220 350 240 
+             Q 370 280 400 300 
+             Q 430 320 450 310 
+             Q 470 300 480 280" 
+          stroke="var(--ink)" stroke-width="2" fill="none" />
+    
+    <!-- Radio lobe south -->
+    <ellipse cx="485" cy="275" rx="25" ry="15" fill="var(--accent)" opacity="0.12" stroke="var(--accent)" stroke-width="1" transform="rotate(20, 485, 275)" />
+    <text x="495" y="285" font-size="8" fill="var(--accent)" font-style="italic">південна частка</text>
+    
+    <!-- Time markers along jet -->
+    <circle cx="290" cy="165" r="2" fill="var(--ink-light)" />
+    <text x="275" y="162" font-size="6" fill="var(--ink-light)">t₁</text>
+    
+    <circle cx="240" cy="105" r="2" fill="var(--ink-light)" />
+    <text x="230" y="100" font-size="6" fill="var(--ink-light)">t₂</text>
+    
+    <circle cx="360" cy="235" r="2" fill="var(--ink-light)" />
+    <text x="365" y="232" font-size="6" fill="var(--ink-light)">t₁</text>
+    
+    <circle cx="420" cy="305" r="2" fill="var(--ink-light)" />
+    <text x="425" y="310" font-size="6" fill="var(--ink-light)">t₂</text>
+    
+    <!-- Precession timescale annotation -->
+    <rect x="30" y="290" width="280" height="55" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="50" y="308" font-size="9" fill="var(--ink)" font-weight="bold">характерні масштаби:</text>
+    <text x="50" y="325" font-size="8" fill="var(--ink-light)">• загальна протяжність: 0.5–1.5 мпк</text>
+    <text x="50" y="340" font-size="8" fill="var(--ink-light)">• вік плазми в частках: 10⁷–10⁸ років</text>
+    
+    <!-- Inversion symmetry annotation -->
+    <line x1="325" y1="60" x2="325" y2="340" stroke="var(--rule)" stroke-width="0.5" stroke-dasharray="2,6" />
+    <text x="330" y="55" font-size="7" fill="var(--ink-light)">центр інверсійної симетрії</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 1.</span>
+    схематичне зображення s-подібної радіогалактики. повільна прецесія осі струменя призводить до формування характерної інверсійно-симетричної морфології: старіша плазма (t₂) перебуває на більших відстанях під кутами, що відрізняються від поточного напрямку викиду. це створює s- або z-подібний візерунок у радіодіапазоні, який є прямим свідченням прецесії центрального джерела.
+  </figcaption>
+</figure>
+
+<p>одним із найбільш показових та гігантських об'єктів цього елітного класу є велетенський квазар pks 2300-18 (відомий також як j2303-1841), загальний лінійний розмір якого сягає астрономічних 0.76 мегапарсека <span class="citation" data-ref="ref_b4">[s_b4, s_s60, s_s222]</span>. ретельний багатохвильовий спектральний аналіз радіовипромінювання (від 183 мгц до 6 ггц, з використанням новітніх інструментів ugmrt та jvla) у поєднанні з кінематичним моделюванням дозволив дослідникам встановити вік найвіддаленішої плазми у великих радіовузлах на рівні близько 40 мільйонів років. при цьому період прецесії осі струменя надійно оцінюється у 12 мільйонів років <span class="citation" data-ref="ref_s37">[s_s37, s_s60, s_b4]</span>.</p>
+
+<p>вивчення оптичного спектра материнської галактики pks 2300-18 виявляє надзвичайно широкі емісійні лінії з подвійними піками, що є класичною ознакою складної кінематики газу навколо ядра і дуже сильним непрямим свідченням присутності подвійної надмасивної чорної діри <span class="citation" data-ref="ref_s37">[s_s37, s_s60, s_b4]</span>. морфологія самої материнської еліптичної галактики є сильно спотвореною і має довгий припливний хвіст через триваюче злиття з галактикою-супутником (яка перебуває на відстані близько 14 кпк). цей факт чудово підкріплює гіпотезу про те, що довгоперіодична прецесія в цьому об'єкті керується гравітаційною динамікою новоутвореної подвійної системи чорних дір, що виникла внаслідок злиття галактик <span class="citation" data-ref="ref_s37">[s_s37, s_b4, s_s60]</span>.</p>
+
+<p>рух осі струменя у pks 2300-18 відбувається проти годинникової стрілки: північний струмінь наразі наближається до променя зору (формуючи яскраві, доплерівськи підсилені радіовузли k1, k2, k3), тоді як південний струмінь віддаляється і виглядає розмитим та дифузним <span class="citation" data-ref="ref_b4">[s_b4]</span>.</p>
+
+<!-- === FIGURE 2: PKS 2300-18 Detailed View === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 340" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">pks 2300-18 (j2303-1841): гігантська s-подібна радіогалактика</text>
+    
+    <!-- Host galaxy -->
+    <ellipse cx="300" cy="200" rx="30" ry="15" fill="var(--ink)" opacity="0.1" stroke="var(--ink)" stroke-width="1.2" />
+    <circle cx="300" cy="200" r="5" fill="var(--accent)" />
+    
+    <!-- Tidal tail -->
+    <path d="M 310 195 Q 340 180 360 170 Q 380 165 390 175" stroke="var(--ink-light)" stroke-width="0.8" fill="none" stroke-dasharray="2,3" />
+    <text x="370" y="165" font-size="7" fill="var(--ink-light)" font-style="italic">припливний хвіст</text>
+    
+    <!-- Companion galaxy -->
+    <ellipse cx="420" cy="160" rx="12" ry="8" fill="var(--ink)" opacity="0.06" stroke="var(--ink-light)" stroke-width="0.8" />
+    <text x="435" y="158" font-size="7" fill="var(--ink-light)">супутник</text>
+    <text x="435" y="170" font-size="6" fill="var(--ink-light)">(~14 кпк)</text>
+    
+    <!-- Northern jet (approaching) -->
+    <path d="M 300 195 
+             Q 280 170 260 140 
+             Q 230 100 190 80 
+             Q 150 60 120 70" 
+          stroke="var(--accent)" stroke-width="2.5" fill="none" />
+    
+    <!-- Northern radio knots -->
+    <circle cx="260" cy="140" r="6" fill="var(--accent)" opacity="0.7" />
+    <text x="250" y="135" font-size="7" fill="var(--accent)">k1</text>
+    
+    <circle cx="220" cy="105" r="7" fill="var(--accent)" opacity="0.8" />
+    <text x="210" y="100" font-size="7" fill="var(--accent)">k2</text>
+    
+    <circle cx="170" cy="80" r="8" fill="var(--accent)" opacity="0.9" />
+    <text x="155" y="75" font-size="7" fill="var(--accent)">k3</text>
+    
+    <!-- Northern lobe -->
+    <ellipse cx="120" cy="70" rx="30" ry="20" fill="var(--accent)" opacity="0.1" stroke="var(--accent)" stroke-width="1" />
+    <text x="100" y="55" font-size="8" fill="var(--accent)" font-style="italic">північна</text>
+    <text x="100" y="67" font-size="8" fill="var(--accent)" font-style="italic">частка</text>
+    
+    <!-- Southern jet (receding) -->
+    <path d="M 300 205 
+             Q 320 230 340 260 
+             Q 370 300 410 320 
+             Q 450 340 480 330" 
+          stroke="var(--ink-light)" stroke-width="1.8" fill="none" stroke-dasharray="6,3" />
+    
+    <!-- Southern lobe -->
+    <ellipse cx="480" cy="330" rx="30" ry="18" fill="var(--ink-light)" opacity="0.08" stroke="var(--ink-light)" stroke-width="1" />
+    <text x="500" y="345" font-size="8" fill="var(--ink-light)" font-style="italic">південна</text>
+    <text x="500" y="357" font-size="8" fill="var(--ink-light)" font-style="italic">частка</text>
+    
+    <!-- Precession direction arrow -->
+    <path d="M 280 180 A 50 40 0 0 0 250 140" stroke="var(--ink)" stroke-width="0.8" fill="none" marker-end="url(#arrowPrec)" />
+    <text x="285" y="165" font-size="7" fill="var(--ink)" font-style="italic">прецесія ↺</text>
+    
+    <defs>
+      <marker id="arrowPrec" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <polygon points="0 0, 6 2, 0 4" fill="var(--ink)" />
+      </marker>
+    </defs>
+    
+    <!-- Doppler boosting annotation -->
+    <rect x="30" y="260" width="260" height="65" fill="var(--paper)" stroke="var(--accent)" stroke-width="0.8" />
+    <text x="45" y="278" font-size="9" fill="var(--accent)" font-weight="bold">ефект доплерівського підсилення:</text>
+    <text x="45" y="296" font-size="8" fill="var(--ink)">• північний струмінь: наближається → δ > 1 → яскраві вузли</text>
+    <text x="45" y="312" font-size="8" fill="var(--ink)">• південний струмінь: віддаляється → δ < 1 → розмитий, дифузний</text>
+    
+    <!-- Parameters box -->
+    <rect x="320" y="260" width="250" height="65" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="335" y="278" font-size="9" fill="var(--ink)" font-weight="bold">параметри pks 2300-18:</text>
+    <text x="335" y="296" font-size="8" fill="var(--ink-light)">• z = 0.128 • лінійний розмір ~ 0.76 мпк</text>
+    <text x="335" y="312" font-size="8" fill="var(--ink-light)">• вік плазми ~ 40 млн р • P_prec ~ 12 млн р</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 2.</span>
+    детальна структура гігантської s-подібної радіогалактики pks 2300-18. прецесія осі струменя з періодом ~12 млн років формує характерну морфологію. північний струмінь наближається до променя зору, що спричиняє доплерівське підсилення яскравих вузлів k1–k3. південний струмінь віддаляється і виглядає дифузним. наявність припливного хвоста та галактики-супутника свідчить про недавнє злиття, що узгоджується з моделлю подвійної smbh.
+  </figcaption>
+</figure>
+
+<p>важливо концептуально розрізняти справжню фізичну прецесію центрального джерела від простого формування спіральних структур (helical jets), що можуть виникати локально внаслідок нестабільностей кельвіна-гельмгольца у потоці плазми або через банальне згинання струменя через фізичне зіткнення з щільними хмарами міжзоряного газу чи поперечними космічними вітрами. однак наявність чіткої, масштабної інверсійної симетрії s-подібних крил (як це спостерігається в об'єктах 4c 29.47, 2masxj12032061+1319316, rbs 797 чи j0644+1043) є безапеляційним доказом саме періодичної переорієнтації самого центрального джерела викиду <span class="citation" data-ref="ref_b4">[s_b4, s_s222, s_s268]</span>.</p>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: КІНЕТИЧНИЙ ЗВОРОТНИЙ ЗВ'ЯЗОК -->
+<!-- ============================================================ -->
+
+<h2>вплив прецесії на міжгалактичне середовище та кінетичний зворотний зв'язок</h2>
+
+<p>на найбільших масштабах прецесія релятивістських струменів перестає бути локальним феноменом і відіграє роль архітектора теплової еволюції всього скупчення галактик. однією з найболючіших проблем сучасної космології є так звана «проблема потоків охолодження» (cooling flow problem). теоретичні розрахунки показують, що розріджений, але надзвичайно гарячий газ у центрі масивних скупчень галактик (intracluster medium) має дуже інтенсивно випромінювати в рентгенівському діапазоні (за рахунок теплового гальмівного випромінювання). через втрату енергії цей газ повинен стрімко охолоджуватися, колапсувати до центру гравітаційної ями і формувати тисячі нових зір щороку. однак таких катастрофічних масштабних спалахів зореутворення у центрах скупчень астрономи не спостерігають.</p>
+
+<p>загальноприйнятим поясненням цієї загадки є концепція кінетичного зворотного зв'язку (kinetic agn feedback) від активних ядер галактик: колосальна кінетична енергія релятивістських струменів розігріває навколишнє середовище, ефективно зупиняючи його теплове охолодження <span class="citation" data-ref="ref_b3">[s_b3, s_s235, s_s351]</span>.</p>
+
+<p>проте тут виникає нова гідродинамічна проблема: статичний, нерухомий струмінь є надзвичайно неефективним нагрівачем великих об'ємів газу. маючи високу швидкість і вузьку колімацію, він діє як свердло, просто «пропалюючи» вузький порожнистий канал у міжгалактичному середовищі, залишаючи левову частку навколишнього газу абсолютно незбуреною і холодною.</p>
+
+<!-- === FIGURE 3: Precessing vs. Static Jet Heating === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 650 380" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">порівняння ефективності нагріву: статичний vs. прецесуючий струмінь</text>
+    
+    <!-- Left panel: Static jet -->
+    <text x="150" y="55" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="bold">(a) статичний струмінь</text>
+    
+    <rect x="30" y="65" width="240" height="160" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    
+    <!-- Central galaxy -->
+    <circle cx="150" cy="145" r="8" fill="var(--accent)" />
+    
+    <!-- Narrow tunnel -->
+    <rect x="140" y="70" width="20" height="75" fill="var(--ink)" opacity="0.05" />
+    <rect x="140" y="145" width="20" height="75" fill="var(--ink)" opacity="0.05" />
+    
+    <!-- Jet -->
+    <line x1="150" y1="137" x2="150" y2="70" stroke="var(--accent)" stroke-width="3" />
+    <line x1="150" y1="153" x2="150" y2="220" stroke="var(--accent)" stroke-width="3" />
+    
+    <!-- Cold gas annotation -->
+    <text x="120" y="100" font-size="8" fill="var(--ink-light)" font-style="italic">холодний газ</text>
+    <text x="120" y="190" font-size="8" fill="var(--ink-light)" font-style="italic">холодний газ</text>
+    
+    <!-- Inefficiency label -->
+    <text x="150" y="250" font-size="9" fill="var(--ink)" text-anchor="middle">неефективний нагрів</text>
+    <text x="150" y="265" font-size="8" fill="var(--ink-light)" text-anchor="middle">вузький канал • газ не збурений</text>
+    
+    <!-- Right panel: Precessing jet -->
+    <text x="430" y="55" font-size="10" fill="var(--ink)" text-anchor="middle" font-weight="bold">(b) прецесуючий струмінь</text>
+    
+    <rect x="310" y="65" width="310" height="160" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    
+    <!-- Central galaxy -->
+    <circle cx="465" cy="145" r="8" fill="var(--accent)" />
+    
+    <!-- Wide heated cocoon -->
+    <ellipse cx="465" cy="145" rx="60" ry="50" fill="var(--accent)" opacity="0.08" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="4,3" />
+    
+    <!-- Precessing jet paths -->
+    <path d="M 465 137 Q 440 100 420 70" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.7" />
+    <path d="M 465 137 Q 460 95 465 70" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.5" />
+    <path d="M 465 137 Q 480 100 510 70" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.7" />
+    
+    <path d="M 465 153 Q 440 190 420 220" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.7" />
+    <path d="M 465 153 Q 460 195 465 220" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.5" />
+    <path d="M 465 153 Q 480 190 510 220" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.7" />
+    
+    <!-- Heated region -->
+    <text x="440" y="95" font-size="8" fill="var(--accent)" font-style="italic">розігрітий</text>
+    <text x="440" y="107" font-size="8" fill="var(--accent)" font-style="italic">кокон</text>
+    
+    <!-- Efficiency label -->
+    <text x="465" y="250" font-size="9" fill="var(--ink)" text-anchor="middle">ефективний ізотропний нагрів</text>
+    <text x="465" y="265" font-size="8" fill="var(--ink-light)" text-anchor="middle">широкий тілесний кут • газ рівномірно розігрітий</text>
+    
+    <!-- Comparison arrow -->
+    <path d="M 270 145 L 310 145" stroke="var(--ink)" stroke-width="1.5" marker-end="url(#arrowComp)" />
+    <defs>
+      <marker id="arrowComp" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink)" />
+      </marker>
+    </defs>
+    <text x="290" y="138" font-size="9" fill="var(--ink)" text-anchor="middle" font-weight="bold">прецесія</text>
+    
+    <!-- Bottom equation/conclusion -->
+    <rect x="30" y="300" width="590" height="65" fill="var(--paper)" stroke="var(--accent)" stroke-width="1" />
+    <text x="325" y="320" font-size="10" fill="var(--accent)" text-anchor="middle" font-weight="bold">висновок: прецесія є критичною для ефективного кінетичного зворотного зв'язку</text>
+    <text x="325" y="340" font-size="9" fill="var(--ink)" text-anchor="middle">розподіл енергії по широкому тілесному куту запобігає «пропалюванню» вузького каналу</text>
+    <text x="325" y="357" font-size="8" fill="var(--ink-light)" text-anchor="middle">оптимальний кут прецесії: 30°–45° • період: десятки млн років (simba, horton et al. 2020)</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 3.</span>
+    порівняння ефективності нагріву міжгалактичного середовища статичним та прецесуючим струменем. (a) статичний струмінь створює вузький канал, залишаючи більшу частину газу холодною. (b) прецесуючий струмінь розподіляє кінетичну енергію по широкому тілесному куту, формуючи ізотропний розігрітий кокон, що ефективно пригнічує охолодження та зореутворення.
+  </figcaption>
+</figure>
+
+<p>детальні дослідження та масштабні тривимірні гідродинамічні симуляції (наприклад, у рамках проєкту simba) неспростовно доводять, що саме прецесія вирішує цю проблему і робить зворотний зв'язок дієвим <span class="citation" data-ref="ref_b3">[s_b3, s_s236, s_s337, s_s376]</span>. коли вісь релятивістського струменя невпинно обертається, викинута кінетична енергія, потужні ударні хвилі та акустичні коливання рівномірно розподіляються по значно ширшому тілесному куті, утворюючи навколо галактики гігантський квазі-ізотропний кокон (cocoon) розігрітої плазми <span class="citation" data-ref="ref_s236">[s_s236]</span>.</p>
+
+<p>симуляції показують, що найкраще і найповніше пригнічення охолодження газу та зупинка небажаного зореутворення відбувається за умови дотримання двох параметрів. по-перше, якщо струмінь прецесує з періодом порядку десятків мільйонів років (що ідеально і бездоганно узгоджується із емпіричними даними для s-подібних галактик типу згаданої вище pks 2300-18). по-друге, якщо він має кут напіврозхилу прецесійного конуса <span class="math">30° – 45°</span> <span class="citation" data-ref="ref_s236">[s_s236, s_s337]</span>. у такій оптимальній конфігурації ударні фронти розміщуються безпосередньо у внутрішніх шарах навкологалактичного середовища (cgm), саме там, де процеси рентгенівського охолодження є найбільш інтенсивними і критичними <span class="citation" data-ref="ref_s337">[s_s337, s_s377]</span>.</p>
+
+<!-- === FIGURE 4: SIMBA Simulation Results === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 340" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">результати гідродинамічних симуляцій simba: вплив кута прецесії</text>
+    
+    <!-- Three panels -->
+    <!-- Panel 1: No precession -->
+    <rect x="30" y="45" width="160" height="120" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="110" y="62" font-size="8" fill="var(--ink)" text-anchor="middle" font-weight="bold">θ = 0° (статичний)</text>
+    <circle cx="110" cy="105" r="6" fill="var(--accent)" />
+    <line x1="110" y1="99" x2="110" y2="60" stroke="var(--accent)" stroke-width="2" />
+    <line x1="110" y1="111" x2="110" y2="150" stroke="var(--accent)" stroke-width="2" />
+    <!-- Cold gas -->
+    <text x="80" y="85" font-size="7" fill="var(--ink-light)">холодний</text>
+    <text x="80" y="95" font-size="7" fill="var(--ink-light)">газ</text>
+    <text x="130" y="130" font-size="7" fill="var(--ink-light)">холодний</text>
+    <text x="130" y="140" font-size="7" fill="var(--ink-light)">газ</text>
+    <text x="110" y="175" font-size="8" fill="var(--ink)" text-anchor="middle">неефективно</text>
+    
+    <!-- Panel 2: Optimal precession -->
+    <rect x="220" y="45" width="160" height="120" fill="var(--paper)" stroke="var(--accent)" stroke-width="1" />
+    <text x="300" y="62" font-size="8" fill="var(--ink)" text-anchor="middle" font-weight="bold">θ = 30°–45°</text>
+    <circle cx="300" cy="105" r="6" fill="var(--accent)" />
+    <!-- Precessing jets -->
+    <path d="M 300 99 Q 280 80 270 60" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.6" />
+    <path d="M 300 99 Q 300 75 300 60" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+    <path d="M 300 99 Q 320 80 330 60" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.6" />
+    <path d="M 300 111 Q 280 130 270 150" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.6" />
+    <path d="M 300 111 Q 300 135 300 150" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+    <path d="M 300 111 Q 320 130 330 150" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.6" />
+    <!-- Heated cocoon -->
+    <ellipse cx="300" cy="105" rx="35" ry="25" fill="var(--accent)" opacity="0.08" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2,2" />
+    <text x="300" y="175" font-size="8" fill="var(--accent)" text-anchor="middle" font-weight="bold">оптимально</text>
+    
+    <!-- Panel 3: Too wide precession -->
+    <rect x="410" y="45" width="160" height="120" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="490" y="62" font-size="8" fill="var(--ink)" text-anchor="middle" font-weight="bold">θ > 60°</text>
+    <circle cx="490" cy="105" r="6" fill="var(--accent)" />
+    <!-- Wide jets -->
+    <path d="M 490 99 Q 450 80 430 60" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.4" />
+    <path d="M 490 99 Q 530 80 550 60" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.4" />
+    <path d="M 490 111 Q 450 130 430 150" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.4" />
+    <path d="M 490 111 Q 530 130 550 150" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.4" />
+    <text x="490" y="175" font-size="8" fill="var(--ink)" text-anchor="middle">енергія розсіюється</text>
+    
+    <!-- SFR suppression graph -->
+    <rect x="30" y="210" width="540" height="110" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="300" y="230" font-size="9" fill="var(--ink)" text-anchor="middle" font-weight="bold">пригнічення темпу зореутворення (sfr) як функція кута прецесії</text>
+    
+    <!-- Axes -->
+    <line x1="80" y1="295" x2="520" y2="295" stroke="var(--ink)" stroke-width="0.8" />
+    <line x1="80" y1="245" x2="80" y2="295" stroke="var(--ink)" stroke-width="0.8" />
+    
+    <text x="300" y="315" font-size="8" fill="var(--ink)" text-anchor="middle">кут прецесії θ (градуси)</text>
+    <text x="50" y="270" font-size="8" fill="var(--ink)" text-anchor="middle" transform="rotate(-90, 50, 270)">sfr (відн. од.)</text>
+    
+    <!-- Curve: SFR vs theta -->
+    <path d="M 80 280 Q 150 290 200 270 Q 250 250 300 245 Q 350 250 400 270 Q 450 285 520 280" 
+          stroke="var(--accent)" stroke-width="2" fill="none" />
+    
+    <!-- Optimal region shading -->
+    <rect x="220" y="245" width="160" height="50" fill="var(--accent)" opacity="0.06" />
+    <text x="300" y="260" font-size="8" fill="var(--accent)" text-anchor="middle">оптимальний діапазон</text>
+    <text x="300" y="273" font-size="7" fill="var(--accent)" text-anchor="middle">30°–45°</text>
+    
+    <!-- Data points -->
+    <circle cx="220" cy="270" r="3" fill="var(--ink)" />
+    <circle cx="300" cy="248" r="4" fill="var(--accent)" />
+    <circle cx="380" cy="270" r="3" fill="var(--ink)" />
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 4.</span>
+    результати гідродинамічних симуляцій (проєкт simba) щодо впливу кута прецесії на ефективність кінетичного зворотного зв'язку. (верхній ряд) візуалізація розподілу енергії для різних кутів. (нижній графік) залежність пригнічення темпу зореутворення (sfr) від кута прецесії. оптимальне пригнічення досягається при θ = 30°–45°, коли ударні фронти розміщуються саме у внутрішніх шарах навкологалактичного середовища.
+  </figcaption>
+</figure>
+
+<p>таким чином, химерна просторова кінематика акреційних дисків, початково зумовлена мікроскопічним ефектом лензе-тіррінга чи гравітаційною взаємодією тісних подвійних чорних дір, має прямий, визначальний вплив на макроскопічну термодинаміку газу в масштабах мільйонів світлових років і назавжди визначає еволюційні шляхи цілих галактичних скупчень у всесвіті.</p>
+
+<!-- === FIGURE 5: Multi-Scale Feedback Loop === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 300" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">багатомасштабний зворотний зв'язок: від горизонту подій до скупчень галактик</text>
+    
+    <!-- Scale ladder -->
+    <!-- Micro scale -->
+    <rect x="30" y="60" width="120" height="80" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.2" />
+    <text x="90" y="80" font-size="9" fill="var(--accent)" text-anchor="middle" font-weight="bold">мікро-масштаб</text>
+    <text x="90" y="97" font-size="8" fill="var(--ink)" text-anchor="middle">r ~ 1–10 r_g</text>
+    <text x="90" y="112" font-size="7" fill="var(--ink-light)" text-anchor="middle">ефект лензе-тіррінга</text>
+    <text x="90" y="125" font-size="7" fill="var(--ink-light)" text-anchor="middle">ергосфера чд</text>
+    
+    <path d="M 150 100 L 190 100" stroke="var(--ink)" stroke-width="1.5" marker-end="url(#arrowScale)" />
+    
+    <!-- Meso scale -->
+    <rect x="190" y="60" width="120" height="80" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2" />
+    <text x="250" y="80" font-size="9" fill="var(--ink)" text-anchor="middle" font-weight="bold">мезо-масштаб</text>
+    <text x="250" y="97" font-size="8" fill="var(--ink)" text-anchor="middle">r ~ 10³–10⁵ r_g</text>
+    <text x="250" y="112" font-size="7" fill="var(--ink-light)" text-anchor="middle">прецесія диска</text>
+    <text x="250" y="125" font-size="7" fill="var(--ink-light)" text-anchor="middle">колімація струменя</text>
+    
+    <path d="M 310 100 L 350 100" stroke="var(--ink)" stroke-width="1.5" marker-end="url(#arrowScale)" />
+    
+    <!-- Macro scale -->
+    <rect x="350" y="60" width="120" height="80" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.2" />
+    <text x="410" y="80" font-size="9" fill="var(--accent)" text-anchor="middle" font-weight="bold">макро-масштаб</text>
+    <text x="410" y="97" font-size="8" fill="var(--ink)" text-anchor="middle">r ~ 10⁶–10⁸ пк</text>
+    <text x="410" y="112" font-size="7" fill="var(--ink-light)" text-anchor="middle">s-подібні крила</text>
+    <text x="410" y="125" font-size="7" fill="var(--ink-light)" text-anchor="middle">розігрів icm</text>
+    
+    <path d="M 470 100 L 510 100" stroke="var(--ink)" stroke-width="1.5" marker-end="url(#arrowScale)" />
+    
+    <!-- Cosmo scale -->
+    <rect x="510" y="60" width="80" height="80" fill="var(--paper)" stroke="var(--ink)" stroke-width="1" />
+    <text x="550" y="80" font-size="9" fill="var(--ink)" text-anchor="middle" font-weight="bold">космо-</text>
+    <text x="550" y="95" font-size="9" fill="var(--ink)" text-anchor="middle" font-weight="bold">масштаб</text>
+    <text x="550" y="112" font-size="7" fill="var(--ink-light)" text-anchor="middle">еволюція</text>
+    <text x="550" y="125" font-size="7" fill="var(--ink-light)" text-anchor="middle">скупчень</text>
+    
+    <defs>
+      <marker id="arrowScale" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink)" />
+      </marker>
+    </defs>
+    
+    <!-- Feedback loop arrows -->
+    <path d="M 550 160 Q 550 200 300 220 Q 50 240 50 200 Q 50 160 90 145" 
+          stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-dasharray="8,4" marker-end="url(#arrowFeedback)" />
+    
+    <defs>
+      <marker id="arrowFeedback" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--accent)" />
+      </marker>
+    </defs>
+    
+    <text x="300" y="215" font-size="9" fill="var(--accent)" text-anchor="middle" font-style="italic">кінетичний зворотний зв'язок (agn feedback)</text>
+    <text x="300" y="230" font-size="8" fill="var(--ink-light)" text-anchor="middle">прецесія забезпечує ефективний розподіл енергії на всіх масштабах</text>
+    
+    <!-- Bottom equation -->
+    <rect x="80" y="255" width="440" height="35" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.5" />
+    <text x="300" y="278" font-size="9" fill="var(--ink)" text-anchor="middle">L_kin(jet) → P_prec(θ) → E_therm(ICM) → пригнічення SFR → регуляція еволюції галактик</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 5.</span>
+    багатомасштабна природа кінетичного зворотного зв'язку. фізичні процеси на мікроскопічних масштабах (ефект лензе-тіррінга поблизу горизонту подій) через прецесію акреційного диска та струменя впливають на макроскопічну структуру радіогалактик і, зрештою, на термодинаміку міжгалактичного середовища в масштабах скупчень галактик. цей багатомасштабний зв'язок є ключовим для розуміння еволюції всесвіту.
+  </figcaption>
+</figure>
+
+<div class="page-navigation">
+  <a href="proofs.html" class="prev">← спостережні докази</a>
+  <a href="glossary.html" class="glossary-link">[ глосарій ]</a>
+  <a href="conclusions.html" class="next">підсумки →</a>
+</div>
+
+<!-- === FOOTER METADATA === -->
+<div class="footer-meta">
+  <span>прецесія релятивістських джетів — preprint v1.0 // секція: макроскопічні наслідки</span>
+  <span>сторінка 16–19</span>
+</div>
+
+<!-- === HIDDEN REFERENCES === -->
+<div style="display: none;">
+  <span id="ref_s37">s_s37: Bruni G. et al. (2021), A&A, 654, A27</span>
+  <span id="ref_s55">s_s55: Lobanov A.P., Zensus J.A. (2001), Science, 294, 128</span>
+  <span id="ref_s60">s_s60: Gower A.C. et al. (1982), ApJ, 262, 478</span>
+  <span id="ref_b4">s_b4: Horton M.A. et al. (2020), MNRAS, 499, 2341</span>
+  <span id="ref_s222">s_s222: Begelman M.C., Blandford R.D., Rees M.J. (1980), Nature, 287, 307</span>
+  <span id="ref_s268">s_s268: Scheuer P.A.G. (1974), MNRAS, 166, 513</span>
+  <span id="ref_b3">s_b3: Miller-Jones J.C.A. et al. (2019), Nature, 569, 374</span>
+  <span id="ref_s235">s_s235: Fabian A.C. (2012), ARA&A, 50, 455</span>
+  <span id="ref_s351">s_s351: McNamara B.R., Nulsen P.E.J. (2007), ARA&A, 45, 117</span>
+  <span id="ref_s236">s_s236: Horton M.A. et al. (2021), MNRAS, 505, 2351</span>
+  <span id="ref_s337">s_s337: Soker N. (2016), NewAR, 75, 1</span>
+  <span id="ref_s376">s_s376: Davé R. et al. (2019), MNRAS, 486, 2827</span>
+  <span id="ref_s377">s_s377: Gaspari M. et al. (2020), NatAs, 4, 10</span>
+</div>
+
+<script src="global.js"></script>
+</body>
+</html>

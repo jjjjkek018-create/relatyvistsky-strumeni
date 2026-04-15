@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>подвійні надмасивні чорні діри — альтернативна парадигма прецесії</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- === PREPRINT HEADER (arXiv Strip) === -->
+<div class="preprint-header">
+  <span class="left">astro-ph.HE // draft version april 2026</span>
+  <span class="right">precession of relativistic jets: binary smbh paradigm</span>
+</div>
+
+<!-- === TITLE SECTION === -->
+<h1>альтернативна парадигма: подвійні надмасивні чорні діри та їхній вплив</h1>
+
+<!-- === ABSTRACT === -->
+<div class="abstract">
+  <p><strong>abstract</strong> розглядається альтернативний механізм прецесії релятивістських струменів, зумовлений гравітаційною взаємодією у подвійних системах надмасивних чорних дір (smbbh). аналізується припливний вплив вторинної чорної діри на акреційний диск первинної, що призводить до ньютонівської прецесії диска та, як наслідок, просторової переорієнтації струменя. обговорюються нутаційні ефекти, резонансні явища та спостережні прояви на макроскопічних масштабах.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION: ПОДВІЙНІ НАДМАСИВНІ ЧОРНІ ДІРИ -->
+<!-- ============================================================ -->
+
+<h2>альтернативна парадигма: подвійні надмасивні чорні діри та їхній вплив</h2>
+
+<p>альтернативним і надзвичайно потужним механізмом прецесії струменів, що домінує на макроскопічних масштабах, є орбітальна взаємодія у подвійних системах надмасивних чорних дір (supermassive binary black holes, smbbh). згідно з сучасною ієрархічною космологічною моделлю формування великомасштабних структур у всесвіті (модель λcdm), галактики зростають шляхом послідовних злиттів. коли дві масивні галактики, кожна з яких містить у своєму ядрі надмасивну чорну діру, стикаються і зливаються, їхні центральні чорні діри поступово опускаються до гравітаційного центру новоутвореної системи через механізм динамічного тертя об зорі та міжзоряний газ, формуючи зрештою тісну подвійну гравітаційно зв'язану систему <span class="citation" data-ref="ref_b4">[s_b4, s_s222]</span>.</p>
+
+<!-- === FIGURE 1: Galaxy Merger → Binary SMBH === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 300" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">еволюція подвійної системи надмасивних чорних дір</text>
+    
+    <!-- Stage 1: Galaxy merger -->
+    <text x="80" y="55" font-size="9" fill="var(--accent)" font-weight="bold" text-anchor="middle">① злиття галактик</text>
+    <ellipse cx="80" cy="110" rx="35" ry="20" fill="none" stroke="var(--ink)" stroke-width="1" />
+    <ellipse cx="80" cy="110" rx="15" ry="8" fill="var(--ink)" opacity="0.15" />
+    <circle cx="65" cy="105" r="4" fill="var(--accent)" />
+    <circle cx="95" cy="115" r="3.5" fill="var(--accent)" />
+    
+    <path d="M 115 110 L 145 110" stroke="var(--ink-light)" stroke-width="1" marker-end="url(#arrowStage)" />
+    
+    <!-- Stage 2: Dynamical friction -->
+    <text x="195" y="55" font-size="9" fill="var(--accent)" font-weight="bold" text-anchor="middle">② динамічне тертя</text>
+    <ellipse cx="195" cy="110" rx="30" ry="18" fill="none" stroke="var(--ink)" stroke-width="1" />
+    <ellipse cx="195" cy="110" rx="12" ry="6" fill="var(--ink)" opacity="0.2" />
+    <circle cx="182" cy="108" r="5" fill="var(--accent)" />
+    <circle cx="208" cy="112" r="4.5" fill="var(--accent)" />
+    
+    <!-- Spiral trails -->
+    <path d="M 170 95 Q 160 90 165 80" stroke="var(--ink-light)" stroke-width="0.6" fill="none" stroke-dasharray="2,2" />
+    <path d="M 220 120 Q 230 125 225 135" stroke="var(--ink-light)" stroke-width="0.6" fill="none" stroke-dasharray="2,2" />
+    
+    <path d="M 230 110 L 260 110" stroke="var(--ink-light)" stroke-width="1" marker-end="url(#arrowStage)" />
+    
+    <!-- Stage 3: Tight binary -->
+    <text x="340" y="55" font-size="9" fill="var(--accent)" font-weight="bold" text-anchor="middle">③ тісна подвійна система</text>
+    <ellipse cx="340" cy="110" rx="25" ry="15" fill="none" stroke="var(--ink)" stroke-width="1" />
+    <circle cx="340" cy="110" r="8" fill="var(--ink)" opacity="0.25" />
+    <circle cx="330" cy="108" r="6" fill="var(--accent)" />
+    <circle cx="350" cy="112" r="5" fill="var(--accent)" />
+    
+    <!-- Orbital motion arrows -->
+    <path d="M 320 100 A 15 10 0 0 1 330 95" stroke="var(--ink)" stroke-width="0.8" fill="none" marker-end="url(#arrowTiny)" />
+    <path d="M 360 120 A 15 10 0 0 1 350 125" stroke="var(--ink)" stroke-width="0.8" fill="none" marker-end="url(#arrowTiny)" />
+    
+    <path d="M 370 110 L 410 110" stroke="var(--ink-light)" stroke-width="1" marker-end="url(#arrowStage)" />
+    
+    <!-- Stage 4: Precessing jet -->
+    <text x="480" y="55" font-size="9" fill="var(--accent)" font-weight="bold" text-anchor="middle">④ прецесуючий</text>
+    <text x="480" y="68" font-size="9" fill="var(--accent)" font-weight="bold" text-anchor="middle">струмінь</text>
+    
+    <ellipse cx="480" cy="110" rx="20" ry="12" fill="none" stroke="var(--ink)" stroke-width="1" />
+    <circle cx="475" cy="108" r="5" fill="var(--accent)" />
+    <circle cx="488" cy="112" r="4" fill="var(--ink)" opacity="0.6" />
+    
+    <!-- Precessing jet cone -->
+    <path d="M 475 108 L 440 60" stroke="var(--accent)" stroke-width="2" />
+    <path d="M 475 108 L 460 55" stroke="var(--accent)" stroke-width="1.2" opacity="0.5" stroke-dasharray="4,3" />
+    <path d="M 475 108 L 420 70" stroke="var(--accent)" stroke-width="0.8" opacity="0.3" stroke-dasharray="3,4" />
+    <path d="M 450 55 A 30 20 0 0 0 420 70" stroke="var(--rule)" stroke-width="0.6" fill="none" stroke-dasharray="2,3" />
+    
+    <defs>
+      <marker id="arrowStage" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink-light)" />
+      </marker>
+      <marker id="arrowTiny" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto">
+        <polygon points="0 0, 5 2, 0 4" fill="var(--ink)" />
+      </marker>
+    </defs>
+    
+    <!-- Timescale annotation -->
+    <rect x="30" y="155" width="540" height="55" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.5" />
+    <text x="300" y="172" font-size="9" fill="var(--ink)" text-anchor="middle">характерні часові масштаби:</text>
+    <text x="300" y="190" font-size="8" fill="var(--ink-light)" text-anchor="middle">динамічне тертя: ~10⁸ років → гравітаційне випромінювання: ~10⁷ років → злиття чд</text>
+    <text x="300" y="204" font-size="8" fill="var(--ink-light)" text-anchor="middle">протягом фази тісної подвійної системи спостерігається прецесія струменя</text>
+    
+    <!-- Bottom legend -->
+    <text x="300" y="250" font-size="9" fill="var(--ink)" text-anchor="middle" font-style="italic">рис. 1. еволюційна послідовність формування подвійної системи надмасивних чорних дір</text>
+    <text x="300" y="265" font-size="8" fill="var(--ink-light)" text-anchor="middle">внаслідок злиття галактик та подальшого динамічного тертя</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 1.</span>
+    еволюційний шлях формування тісної подвійної системи надмасивних чорних дір (smbbh). злиття двох галактик (①) призводить до опускання центральних чорних дір до спільного центру мас через динамічне тертя (②). у фазі тісної подвійної системи (③) припливна взаємодія змушує акреційний диск первинної чорної діри прецесувати, що спричиняє просторову прецесію релятивістського струменя (④).
+  </figcaption>
+</figure>
+
+<p>присутність другої масивної чорної діри поблизу створює виразно асиметричний гравітаційний потенціал, який здійснює потужний припливний вплив на акреційний диск первинної чорної діри (тієї, що генерує струмінь) <span class="citation" data-ref="ref_b4">[s_b4, s_s239]</span>. цей припливний ньютонівський момент змушує акреційний диск прецесувати з періодом, який прямо залежить від кількох ключових параметрів: орбітального періоду самої подвійної системи, відношення мас компонентів та зовнішнього розміру акреційного диска. оскільки колімований релятивістський струмінь жорстко прив'язаний до тороїдального магнітного поля, яке вкорінене у внутрішніх частинах диска або безпосередньо в ергосфері, прецесія акреційного диска неминуче і невідворотно призводить до просторової прецесії самого струменя <span class="citation" data-ref="ref_s101">[s_s101]</span>.</p>
+
+<!-- === FIGURE 2: Binary SMBH + Precessing Disk === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 650 380" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">припливна прецесія акреційного диска в подвійній системі smbh</text>
+    
+    <!-- Primary black hole (center of figure) -->
+    <circle cx="250" cy="200" r="40" fill="var(--ink)" opacity="0.9" />
+    <circle cx="250" cy="200" r="40" fill="none" stroke="var(--accent)" stroke-width="1.5" />
+    <text x="250" y="205" font-size="11" fill="var(--paper)" text-anchor="middle" font-weight="bold">чд₁</text>
+    <text x="250" y="225" font-size="7" fill="var(--paper)" text-anchor="middle">(первинна)</text>
+    
+    <!-- Accretion disk around primary -->
+    <ellipse cx="270" cy="200" rx="90" ry="22" fill="none" stroke="var(--ink)" stroke-width="1.5" transform="rotate(-20, 270, 200)" />
+    <ellipse cx="270" cy="200" rx="60" ry="14" fill="none" stroke="var(--ink-light)" stroke-width="0.8" stroke-dasharray="3,3" transform="rotate(-20, 270, 200)" />
+    <ellipse cx="270" cy="200" rx="35" ry="8" fill="var(--ink)" opacity="0.06" stroke="var(--ink-light)" stroke-width="0.5" transform="rotate(-20, 270, 200)" />
+    
+    <!-- Secondary black hole (orbiting) -->
+    <circle cx="480" cy="130" r="25" fill="var(--ink)" opacity="0.85" />
+    <circle cx="480" cy="130" r="25" fill="none" stroke="var(--ink-light)" stroke-width="1.2" />
+    <text x="480" y="135" font-size="9" fill="var(--paper)" text-anchor="middle" font-weight="bold">чд₂</text>
+    <text x="480" y="150" font-size="6" fill="var(--paper)" text-anchor="middle">(вторинна)</text>
+    
+    <!-- Orbit of secondary -->
+    <ellipse cx="300" cy="180" rx="200" ry="70" fill="none" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="6,4" transform="rotate(-15, 300, 180)" />
+    
+    <!-- Orbital motion arrow -->
+    <path d="M 500 120 A 200 70 0 0 1 510 150" stroke="var(--ink-light)" stroke-width="1" fill="none" marker-end="url(#arrowOrbit)" />
+    
+    <!-- Tidal force vectors -->
+    <line x1="480" y1="130" x2="350" y2="180" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3" />
+    <line x1="480" y1="130" x2="300" y2="210" stroke="var(--accent)" stroke-width="0.8" stroke-dasharray="3,4" opacity="0.7" />
+    
+    <text x="410" y="155" font-size="8" fill="var(--accent)" font-style="italic">припливна</text>
+    <text x="412" y="167" font-size="8" fill="var(--accent)" font-style="italic">сила</text>
+    
+    <!-- Jet from primary -->
+    <line x1="250" y1="160" x2="180" y2="60" stroke="var(--accent)" stroke-width="2.5" />
+    <polygon points="175,65 165,52 182,58" fill="var(--accent)" />
+    <text x="140" y="55" font-size="9" fill="var(--accent)" font-style="italic">струмінь</text>
+    
+    <!-- Precession of disk -->
+    <path d="M 350 185 A 80 18 0 0 1 360 210" stroke="var(--ink)" stroke-width="1.2" fill="none" marker-end="url(#arrowPrec)" />
+    <text x="370" y="195" font-size="8" fill="var(--ink)" font-style="italic">прецесія диска</text>
+    
+    <defs>
+      <marker id="arrowOrbit" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink-light)" />
+      </marker>
+      <marker id="arrowPrec" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink)" />
+      </marker>
+    </defs>
+    
+    <!-- System parameters box -->
+    <rect x="30" y="280" width="590" height="85" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.6" />
+    <text x="50" y="300" font-size="9" fill="var(--ink)" font-weight="bold">параметри системи, що визначають період прецесії:</text>
+    <text x="50" y="320" font-size="9" fill="var(--ink-light)">• орбітальний період подвійної системи P_orb</text>
+    <text x="50" y="338" font-size="9" fill="var(--ink-light)">• відношення мас q = M₂ / M₁</text>
+    <text x="50" y="356" font-size="9" fill="var(--ink-light)">• зовнішній радіус акреційного диска R_out</text>
+    
+    <text x="380" y="320" font-size="9" fill="var(--ink)" font-style="italic">P_prec ∝ P_orb · (1+q)¹ᐟ² · (R_out / a)³ᐟ²</text>
+    <text x="380" y="340" font-size="8" fill="var(--ink-light)">де a — велика піввісь орбіти подвійної системи</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 2.</span>
+    схематичне зображення припливної прецесії акреційного диска в подвійній системі надмасивних чорних дір. гравітаційний вплив вторинної чорної діри (чд₂) створює асиметричний припливний момент, що змушує диск навколо первинної чорної діри (чд₁) прецесувати. струмінь, вкорінений у внутрішніх областях диска, слідує за цією прецесією. період прецесії визначається орбітальними параметрами системи та розміром диска.
+  </figcaption>
+</figure>
+
+<p>у деяких теоретичних розвідках подвійних систем розглядається також можливість геодезичної прецесії (зумовленої викривленням простору-часу) осі обертання однієї чорної діри в гравітаційному полі іншої. втім, ретельні підрахунки доводять, що цей механізм генерує надзвичайно довгі часові шкали (часто порядку десятків чи сотень мільйонів років), які важко зіставити з порівняно короткоперіодичними варіаціями кривих блиску, що їх спостерігають у багатьох блазарах <span class="citation" data-ref="ref_s239">[s_s239, s_s271, s_s283]</span>. з огляду на це, ньютонівська припливна прецесія диска в тісній подвійній системі залишається значно вірогіднішим фізичним поясненням для явищ прецесії, що відбуваються на часових масштабах від кількох до кількох десятків років <span class="citation" data-ref="ref_s239">[s_s239]</span>.</p>
+
+<!-- === FIGURE 3: Timescale Comparison === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 280" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">порівняння часових масштабів: припливна vs. геодезична прецесія</text>
+    
+    <!-- Log scale axis -->
+    <line x1="80" y1="200" x2="560" y2="200" stroke="var(--ink)" stroke-width="1" />
+    
+    <!-- Tick marks -->
+    <line x1="80" y1="195" x2="80" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="80" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">1 рік</text>
+    
+    <line x1="160" y1="195" x2="160" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="160" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">10 років</text>
+    
+    <line x1="240" y1="195" x2="240" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="240" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">10² років</text>
+    
+    <line x1="320" y1="195" x2="320" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="320" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">10⁴ років</text>
+    
+    <line x1="400" y1="195" x2="400" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="400" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">10⁶ років</text>
+    
+    <line x1="480" y1="195" x2="480" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="480" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">10⁸ років</text>
+    
+    <line x1="560" y1="195" x2="560" y2="205" stroke="var(--ink)" stroke-width="1" />
+    <text x="560" y="220" font-size="8" fill="var(--ink)" text-anchor="middle">10¹⁰ років</text>
+    
+    <text x="320" y="245" font-size="9" fill="var(--ink)" text-anchor="middle">період прецесії (логарифмічна шкала)</text>
+    
+    <!-- Tidal precession range -->
+    <rect x="130" y="100" width="140" height="30" fill="var(--accent)" opacity="0.15" stroke="var(--accent)" stroke-width="1" />
+    <text x="200" y="120" font-size="10" fill="var(--accent)" text-anchor="middle" font-weight="bold">припливна прецесія</text>
+    <text x="200" y="140" font-size="8" fill="var(--accent)" text-anchor="middle">(спостережувана в блазарах)</text>
+    
+    <!-- Geodetic precession range -->
+    <rect x="350" y="100" width="180" height="30" fill="var(--ink-light)" opacity="0.1" stroke="var(--ink-light)" stroke-width="1" stroke-dasharray="4,3" />
+    <text x="440" y="120" font-size="10" fill="var(--ink-light)" text-anchor="middle">геодезична прецесія</text>
+    <text x="440" y="140" font-size="8" fill="var(--ink-light)" text-anchor="middle">(занадто повільна для пояснення варіацій)</text>
+    
+    <!-- Specific objects markers -->
+    <!-- OJ 287 -->
+    <circle cx="185" cy="180" r="4" fill="var(--ink)" />
+    <line x1="185" y1="180" x2="185" y2="195" stroke="var(--ink)" stroke-width="0.5" />
+    <text x="175" y="175" font-size="8" fill="var(--ink)">oj 287</text>
+    <text x="178" y="188" font-size="7" fill="var(--ink-light)">~24 роки</text>
+    
+    <!-- 3C 84 -->
+    <circle cx="220" cy="180" r="4" fill="var(--ink)" />
+    <line x1="220" y1="180" x2="220" y2="195" stroke="var(--ink)" stroke-width="0.5" />
+    <text x="210" y="175" font-size="8" fill="var(--ink)">3c 84</text>
+    <text x="213" y="188" font-size="7" fill="var(--ink-light)">~40 років</text>
+    
+    <!-- PKS 2300 -->
+    <circle cx="430" cy="180" r="4" fill="var(--ink-light)" />
+    <line x1="430" y1="180" x2="430" y2="195" stroke="var(--ink-light)" stroke-width="0.5" />
+    <text x="420" y="175" font-size="8" fill="var(--ink-light)">pks 2300</text>
+    <text x="423" y="188" font-size="7" fill="var(--ink-light)">~12 млн років</text>
+    
+    <!-- Arrow annotation -->
+    <text x="300" y="75" font-size="9" fill="var(--ink)" text-anchor="middle" font-style="italic">спостережні дані надають перевагу припливному механізму</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 3.</span>
+    порівняння характерних часових масштабів припливної (ньютонівської) та геодезичної прецесії в подвійних системах smbh. припливна прецесія акреційного диска відбувається на масштабах від кількох років до десятків років, що добре узгоджується зі спостережуваними варіаціями кривих блиску блазарів (oj 287, 3c 84). геодезична прецесія спіну чорної діри є на порядки повільнішою і не може пояснити короткоперіодичні флуктуації.
+  </figcaption>
+</figure>
+
+<p>крім того, подвійна система може породжувати вторинні резонансні явища. наприклад, міні-диски, що утворюються навколо кожної з чорних дір всередині загального циркумбінарного диска, можуть відчувати так зване «нутаційне тремтіння» з періодом, що дорівнює приблизно половині орбітального періоду подвійної системи (<span class="math">p_nut ≈ 0.5 p_bin</span>) <span class="citation" data-ref="ref_b2">[s_b2]</span>. це тремтіння накладається на загальну повільнішу прецесію, створюючи складний багатоперіодичний малюнок у кривих блиску.</p>
+
+<!-- === FIGURE 4: Nutation + Precession Combined === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 300" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">комбінований рух: прецесія + нутація осі струменя</text>
+    
+    <!-- Precession cone (large) -->
+    <ellipse cx="300" cy="200" rx="120" ry="35" fill="none" stroke="var(--rule)" stroke-width="0.8" stroke-dasharray="6,4" />
+    
+    <!-- Nutation wobble on the cone -->
+    <path d="M 180 200 Q 190 180 210 195 Q 230 210 250 195 Q 270 180 290 200 Q 310 220 330 200 Q 350 180 370 200 Q 390 220 410 195 Q 420 180 420 200" 
+          stroke="var(--accent)" stroke-width="1.8" fill="none" />
+    
+    <!-- Jet axis (instantaneous) -->
+    <line x1="300" y1="200" x2="370" y2="90" stroke="var(--accent)" stroke-width="2.5" />
+    <polygon points="365,95 375,80 378,95" fill="var(--accent)" />
+    
+    <!-- Central black hole -->
+    <circle cx="300" cy="200" r="15" fill="var(--ink)" opacity="0.9" />
+    <circle cx="300" cy="200" r="15" fill="none" stroke="var(--accent)" stroke-width="1" />
+    
+    <!-- Precession arrow -->
+    <path d="M 400 180 A 100 30 0 0 1 420 210" stroke="var(--ink)" stroke-width="1" fill="none" marker-end="url(#arrowPrec2)" />
+    <text x="430" y="195" font-size="9" fill="var(--ink)" font-style="italic">прецесія</text>
+    <text x="432" y="207" font-size="7" fill="var(--ink-light)">(P_prec)</text>
+    
+    <!-- Nutation arrow -->
+    <path d="M 230 170 Q 240 155 255 165" stroke="var(--ink-light)" stroke-width="0.8" fill="none" marker-end="url(#arrowNut)" />
+    <text x="215" y="160" font-size="8" fill="var(--ink-light)" font-style="italic">нутація</text>
+    <text x="217" y="172" font-size="7" fill="var(--ink-light)">(P_nut ≈ 0.5 P_bin)</text>
+    
+    <defs>
+      <marker id="arrowPrec2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="var(--ink)" />
+      </marker>
+      <marker id="arrowNut" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+        <polygon points="0 0, 6 2, 0 4" fill="var(--ink-light)" />
+      </marker>
+    </defs>
+    
+    <!-- Combined motion annotation -->
+    <rect x="50" y="250" width="500" height="40" fill="var(--paper)" stroke="var(--rule)" stroke-width="0.5" />
+    <text x="300" y="267" font-size="9" fill="var(--ink)" text-anchor="middle">результуючий рух осі струменя: повільна прецесія (великий конус) + швидка нутація (дрібні осциляції)</text>
+    <text x="300" y="283" font-size="8" fill="var(--ink-light)" text-anchor="middle">спостерігається в ss 433 (P_prec ≈ 162 д, P_nut ≈ 6.5 д) та oj 287 (P_prec ≈ 24 р, P_nut ≈ 1 р)</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 4.</span>
+    комбінований кінематичний рух осі релятивістського струменя в подвійній системі. повільна прецесія (великий конус, період P_prec) модулюється швидкою нутацією (дрібне тремтіння, період P_nut ≈ 0.5 P_bin), спричиненою припливною взаємодією з вторинною чорною дірою. таке поєднання рухів створює характерний багатоперіодичний малюнок у кривих блиску.
+  </figcaption>
+</figure>
+
+<!-- === FIGURE 5: OJ 287 Light Curve Schematic === -->
+<figure class="fig-interactive">
+  <svg width="100%" height="auto" viewBox="0 0 600 280" style="background: var(--paper);">
+    <text x="30" y="25" font-size="11" fill="var(--ink)" font-weight="bold">крива блиску oj 287: подвійні спалахи та прецесійна модуляція</text>
+    
+    <!-- Axes -->
+    <line x1="70" y1="220" x2="570" y2="220" stroke="var(--ink)" stroke-width="1" />
+    <line x1="70" y1="40" x2="70" y2="220" stroke="var(--ink)" stroke-width="1" />
+    
+    <text x="320" y="250" font-size="9" fill="var(--ink)" text-anchor="middle">час (роки)</text>
+    <text x="30" y="135" font-size="9" fill="var(--ink)" text-anchor="middle" transform="rotate(-90, 30, 135)">потік (відн. од.)</text>
+    
+    <!-- X-axis ticks -->
+    <line x1="120" y1="215" x2="120" y2="225" stroke="var(--ink)" stroke-width="0.8" />
+    <text x="120" y="238" font-size="8" fill="var(--ink)" text-anchor="middle">1980</text>
+    
+    <line x1="220" y1="215" x2="220" y2="225" stroke="var(--ink)" stroke-width="0.8" />
+    <text x="220" y="238" font-size="8" fill="var(--ink)" text-anchor="middle">1990</text>
+    
+    <line x1="320" y1="215" x2="320" y2="225" stroke="var(--ink)" stroke-width="0.8" />
+    <text x="320" y="238" font-size="8" fill="var(--ink)" text-anchor="middle">2000</text>
+    
+    <line x1="420" y1="215" x2="420" y2="225" stroke="var(--ink)" stroke-width="0.8" />
+    <text x="420" y="238" font-size="8" fill="var(--ink)" text-anchor="middle">2010</text>
+    
+    <line x1="520" y1="215" x2="520" y2="225" stroke="var(--ink)" stroke-width="0.8" />
+    <text x="520" y="238" font-size="8" fill="var(--ink)" text-anchor="middle">2020</text>
+    
+    <!-- Light curve (stylized double-peaked outbursts) -->
+    <path d="M 70 200 
+             Q 110 195 130 140 
+             Q 140 100 150 140 
+             Q 160 180 170 185 
+             Q 200 180 220 130 
+             Q 230 90 240 130 
+             Q 250 170 260 180 
+             Q 290 175 310 120 
+             Q 320 80 330 120 
+             Q 340 160 350 175 
+             Q 380 170 400 110 
+             Q 410 70 420 110 
+             Q 430 150 440 165 
+             Q 470 160 490 100 
+             Q 500 60 510 100 
+             Q 520 140 530 155" 
+          stroke="var(--accent)" stroke-width="1.8" fill="none" />
+    
+    <!-- Fill under curve -->
+    <path d="M 70 200 
+             Q 110 195 130 140 
+             Q 140 100 150 140 
+             Q 160 180 170 185 
+             Q 200 180 220 130 
+             Q 230 90 240 130 
+             Q 250 170 260 180 
+             Q 290 175 310 120 
+             Q 320 80 330 120 
+             Q 340 160 350 175 
+             Q 380 170 400 110 
+             Q 410 70 420 110 
+             Q 430 150 440 165 
+             Q 470 160 490 100 
+             Q 500 60 510 100 
+             Q 520 140 530 155
+             L 530 220 L 70 220 Z" 
+          fill="var(--accent)" opacity="0.08" />
+    
+    <!-- 11.65 yr period markers -->
+    <line x1="150" y1="80" x2="150" y2="220" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,4" />
+    <line x1="240" y1="80" x2="240" y2="220" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,4" />
+    <line x1="330" y1="80" x2="330" y2="220" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,4" />
+    <line x1="420" y1="80" x2="420" y2="220" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,4" />
+    <line x1="510" y1="80" x2="510" y2="220" stroke="var(--ink-light)" stroke-width="0.5" stroke-dasharray="2,4" />
+    
+    <text x="195" y="75" font-size="8" fill="var(--ink-light)" text-anchor="middle">~11.65 років</text>
+    <text x="285" y="75" font-size="8" fill="var(--ink-light)" text-anchor="middle">~11.65 років</text>
+    <text x="375" y="75" font-size="8" fill="var(--ink-light)" text-anchor="middle">~11.65 років</text>
+    <text x="465" y="75" font-size="8" fill="var(--ink-light)" text-anchor="middle">~11.65 років</text>
+    
+    <!-- Double peak annotation -->
+    <line x1="130" y1="95" x2="145" y2="95" stroke="var(--ink)" stroke-width="0.8" />
+    <line x1="145" y1="95" x2="155" y2="95" stroke="var(--ink)" stroke-width="0.8" />
+    <text x="140" y="88" font-size="7" fill="var(--ink)" text-anchor="middle">подвійний</text>
+    <text x="140" y="78" font-size="7" fill="var(--ink)" text-anchor="middle">спалах</text>
+  </svg>
+  <figcaption>
+    <span class="fig-label">рис. 5.</span>
+    схематична крива блиску блазара oj 287, що демонструє характерні подвійні спалахи з квазіперіодом ~11.65 років. ця структура пояснюється комбінацією прецесії струменя (довгоперіодична модуляція) та нутаційних ефектів, спричинених припливною взаємодією в подвійній системі надмасивних чорних дір. подвійні піки відповідають моментам максимального доплерівського підсилення при проходженні струменя через промінь зору спостерігача.
+  </figcaption>
+</figure>
+
+<div class="page-navigation">
+  <a href="dynamics.html" class="prev">← динаміка дисків</a>
+  <a href="glossary.html" class="glossary-link">[ глосарій ]</a>
+  <a href="proofs.html" class="next">спостережні докази →</a>
+</div>
+
+<!-- === FOOTER METADATA === -->
+<div class="footer-meta">
+  <span>прецесія релятивістських джетів — preprint v1.0 // секція: подвійні smbh</span>
+  <span>сторінка 7–9</span>
+</div>
+
+<!-- === HIDDEN REFERENCES === -->
+<div style="display: none;">
+  <span id="ref_b4">s_b4: Horton M.A. et al. (2020), MNRAS, 499, 2341</span>
+  <span id="ref_s222">s_s222: Begelman M.C., Blandford R.D., Rees M.J. (1980), Nature, 287, 307</span>
+  <span id="ref_s239">s_s239: Romero G.E. et al. (2000), A&A, 360, 57</span>
+  <span id="ref_s101">s_s101: Larwood J.D. (1997), MNRAS, 290, 490</span>
+  <span id="ref_s271">s_s271: Thorne K.S., Hartle J.B. (1985), Phys. Rev. D, 31, 1815</span>
+  <span id="ref_s283">s_s283: Merritt D., Ekers R.D. (2002), Science, 297, 1310</span>
+  <span id="ref_b2">s_b2: Britzen S. et al. (2018), MNRAS, 478, 3199</span>
+</div>
+
+<script src="global.js"></script>
+</body>
+</html>
